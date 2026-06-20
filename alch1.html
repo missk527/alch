@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atomic Structure</title>
+<style>
+:root{
+--brand:#0ea5e9;
+--ink:#1f2937;
+--paper:#fafafa;
+--card:#ffffff;
+--muted:#6b7280;
+--good:#16a34a;
+--bad:#dc2626;
+}
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+color:var(--ink);
+background:var(--paper);
+line-height:1.6;
+}
+header{
+background:linear-gradient(135deg,var(--brand),#6366f1);
+color:white;
+padding:20px 16px;
+text-align:center;
+}
+.wrap{max-width:1000px;margin:0 auto;padding:16px}
+.card{
+background:var(--card);
+border-radius:12px;
+padding:18px;
+box-shadow:0 6px 18px rgba(2,6,23,.08);
+margin:16px 0;
+}
+iframe{
+width:100%;
+max-width:900px;
+height:480px;
+border:0;
+border-radius:12px;
+}
+details{
+border:1px solid #e5e7eb;
+border-radius:10px;
+padding:10px 12px;
+margin:10px 0;
+background:#fff;
+}
+summary{
+font-weight:700;
+color:#0f766e;
+cursor:pointer;
+}
+.btn{
+background:var(--brand);
+color:white;
+border:0;
+border-radius:10px;
+padding:10px 14px;
+font-weight:700;
+cursor:pointer;
+}
+.correct{color:green}
+.incorrect{color:red}
+</style>
+</head>
+<body>
+
+<header>
+<h1>40C. Atomic Structure</h1>
+</header>
+
+<div class="wrap">
+
+<div class="card">
+<iframe src="https://www.youtube.com/embed/HFKcmt7n0FU" allowfullscreen></iframe>
+</div>
+
+<section class="card">
+<h2>Key Notes (Synced with Video)</h2>
+
+<details open>
+<summary>0:00 - 0:40 | What Is an Atom?</summary>
+<ul>
+<li>An atom is the basic unit of matter and the smallest particle of a chemical element.</li>
+<li>Almost everything around us is made of atoms, including people, food, planets, and galaxies.</li>
+<li>Energy is not made of atoms, but matter is.</li>
+<li>Atoms are too small to see directly, so scientists use models to explain their structure.</li>
+</ul>
+</details>
+<details>
+<summary>0:40 - 1:20 | Models of the Atom</summary>
+<ul>
+<li>Thomson's plum pudding model described the atom as a positive sphere with negative electrons inside it.</li>
+<li>Rutherford's model introduced the idea of a small central nucleus.</li>
+<li>Bohr's model showed electrons moving around the nucleus in shells.</li>
+<li>Modern school-level diagrams often use a Bohr-style model to show atomic structure clearly.</li>
+</ul>
+</details>
+<details>
+<summary>1:20 - 2:10 | Atomic Structure</summary>
+<ul>
+<li>The nucleus is at the centre of the atom.</li>
+<li>The nucleus is tiny and dense because it contains almost all of the atom's mass.</li>
+<li>The nucleus contains protons and neutrons.</li>
+<li>Protons and neutrons are called nucleons because they are found in the nucleus.</li>
+</ul>
+</details>
+<details>
+<summary>2:10 - 3:05 | Subatomic Particles</summary>
+<ul>
+<li>Electrons move around the nucleus in shells.</li>
+<li>Electrons are extremely small and contribute very little to the mass of an atom.</li>
+<li>Protons have a relative charge of +1.</li>
+<li>Neutrons have no charge, and electrons have a relative charge of -1.</li>
+</ul>
+</details>
+<details>
+<summary>3:05 - 4:00 | Relative Mass and Neutral Atoms</summary>
+<ul>
+<li>Protons and neutrons each have a relative mass of 1.</li>
+<li>Electrons have a relative mass of about 1/2000, so their mass is usually ignored in simple calculations.</li>
+<li>In a neutral atom, the number of protons equals the number of electrons.</li>
+<li>Equal positive and negative charges cancel out, so a neutral atom has no overall charge.</li>
+</ul>
+</details>
+<details>
+<summary>4:00 - 5:10 | Mass Number and Atomic Number</summary>
+<ul>
+<li>The atomic number is the number of protons in an atom.</li>
+<li>The mass number is the total number of protons and neutrons.</li>
+<li>The mass number is usually larger than the atomic number.</li>
+<li>The number of neutrons can be calculated using: mass number - atomic number.</li>
+</ul>
+</details>
+<details>
+<summary>5:10 - 6:20 | Worked Examples</summary>
+<ul>
+<li>Aluminium has atomic number 13, so it has 13 protons.</li>
+<li>A neutral aluminium atom has 13 electrons.</li>
+<li>Aluminium with mass number 27 has 14 neutrons because 27 - 13 = 14.</li>
+<li>Sodium with atomic number 11 has 11 electrons if it is neutral.</li>
+</ul>
+</details>
+<details>
+<summary>6:20 - End | Periodic Table and Exam Skills</summary>
+<ul>
+<li>The periodic table is arranged in order of increasing atomic number.</li>
+<li>Vanadium comes before chromium because vanadium has atomic number 23 and chromium has atomic number 24.</li>
+<li>For neutral atoms, protons and electrons are equal.</li>
+<li>For questions about neutrons, subtract the atomic number from the mass number.</li>
+</ul>
+</details>
+
+</section>
+
+<section class="card">
+<h2>Quiz (40 Questions)</h2>
+<div id="game-area">
+<button class="btn" onclick="startGame()">Start Quiz</button>
+</div>
+</section>
+
+</div>
+
+<script>
+const questions=[
+  {
+    "type": "mcq",
+    "question": "What is an atom?",
+    "options": [
+      "The basic unit of matter",
+      "A type of energy",
+      "A large chemical compound"
+    ],
+    "answer": 0,
+    "explanation": "An atom is the basic unit of matter and the smallest particle of an element."
+  },
+  {
+    "type": "fill",
+    "question": "An atom is the smallest particle of a chemical ______.",
+    "answerText": "element",
+    "explanation": "Atoms are the smallest particles that represent chemical elements."
+  },
+  {
+    "type": "mcq",
+    "question": "Which of these is made of atoms?",
+    "options": [
+      "Food",
+      "Energy",
+      "Light only"
+    ],
+    "answer": 0,
+    "explanation": "Matter such as food is made of atoms; energy itself is not matter."
+  },
+  {
+    "type": "fill",
+    "question": "Everything made of matter is made of ______.",
+    "answerText": "atoms",
+    "explanation": "Atoms make up matter."
+  },
+  {
+    "type": "mcq",
+    "question": "Which scientist proposed the plum pudding model?",
+    "options": [
+      "Thomson",
+      "Rutherford",
+      "Bohr"
+    ],
+    "answer": 0,
+    "explanation": "Thomson proposed the plum pudding model of the atom."
+  },
+  {
+    "type": "mcq",
+    "question": "What did Thomson's plum pudding model include?",
+    "options": [
+      "A positive sphere with negative electrons",
+      "A solid ball with no electrons",
+      "Only a nucleus"
+    ],
+    "answer": 0,
+    "explanation": "The plum pudding model showed negative electrons embedded in a positive sphere."
+  },
+  {
+    "type": "fill",
+    "question": "Rutherford's model proposed a central ______.",
+    "answerText": "nucleus",
+    "explanation": "Rutherford introduced the idea of a small central nucleus."
+  },
+  {
+    "type": "mcq",
+    "question": "Which model shows electrons in shells around the nucleus?",
+    "options": [
+      "Bohr model",
+      "Plum pudding model",
+      "Solid sphere model"
+    ],
+    "answer": 0,
+    "explanation": "Bohr's model places electrons in shells around the nucleus."
+  },
+  {
+    "type": "fill",
+    "question": "The nucleus is found at the ______ of the atom.",
+    "answerText": "centre",
+    "explanation": "The nucleus is located at the centre of the atom."
+  },
+  {
+    "type": "mcq",
+    "question": "How is the nucleus described in the speech?",
+    "options": [
+      "Tiny and dense",
+      "Large and empty",
+      "Negative and light"
+    ],
+    "answer": 0,
+    "explanation": "The nucleus is tiny and dense because it contains almost all the atom's mass."
+  },
+  {
+    "type": "fill",
+    "question": "The nucleus contains protons and ______.",
+    "answerText": "neutrons",
+    "explanation": "The nucleus is made of protons and neutrons."
+  },
+  {
+    "type": "mcq",
+    "question": "What are protons and neutrons collectively called?",
+    "options": [
+      "Nucleons",
+      "Electrons",
+      "Ions"
+    ],
+    "answer": 0,
+    "explanation": "Protons and neutrons are called nucleons because they are in the nucleus."
+  },
+  {
+    "type": "fill",
+    "question": "Electrons orbit the nucleus in ______.",
+    "answerText": "shells",
+    "explanation": "Electrons are arranged in shells around the nucleus."
+  },
+  {
+    "type": "mcq",
+    "question": "Which particles contribute very little to atomic mass?",
+    "options": [
+      "Electrons",
+      "Protons",
+      "Neutrons"
+    ],
+    "answer": 0,
+    "explanation": "Electrons are very small and have very little mass."
+  },
+  {
+    "type": "mcq",
+    "question": "What charge does a proton have?",
+    "options": [
+      "Positive",
+      "Negative",
+      "Neutral"
+    ],
+    "answer": 0,
+    "explanation": "A proton has a positive charge."
+  },
+  {
+    "type": "fill",
+    "question": "A neutron has a ______ charge.",
+    "answerText": "neutral",
+    "explanation": "A neutron has no charge, so it is neutral."
+  },
+  {
+    "type": "mcq",
+    "question": "What charge does an electron have?",
+    "options": [
+      "Negative",
+      "Positive",
+      "Neutral"
+    ],
+    "answer": 0,
+    "explanation": "An electron has a negative charge."
+  },
+  {
+    "type": "fill",
+    "question": "A proton has a relative mass of ______.",
+    "answerText": "1",
+    "explanation": "A proton has a relative mass of 1."
+  },
+  {
+    "type": "mcq",
+    "question": "What is the relative mass of a neutron?",
+    "options": [
+      "1",
+      "1/2000",
+      "0"
+    ],
+    "answer": 0,
+    "explanation": "A neutron has a relative mass of 1."
+  },
+  {
+    "type": "fill",
+    "question": "An electron has a relative mass of about 1/______.",
+    "answerText": "2000",
+    "explanation": "An electron has a relative mass of about 1/2000."
+  },
+  {
+    "type": "mcq",
+    "question": "In a neutral atom, which two particles are equal in number?",
+    "options": [
+      "Protons and electrons",
+      "Protons and neutrons",
+      "Neutrons and electrons"
+    ],
+    "answer": 0,
+    "explanation": "Neutral atoms have equal numbers of protons and electrons."
+  },
+  {
+    "type": "fill",
+    "question": "A neutral atom has no overall ______.",
+    "answerText": "charge",
+    "explanation": "The positive and negative charges cancel out."
+  },
+  {
+    "type": "mcq",
+    "question": "What does the atomic number tell you?",
+    "options": [
+      "Number of protons",
+      "Number of neutrons only",
+      "Number of shells"
+    ],
+    "answer": 0,
+    "explanation": "The atomic number is the number of protons."
+  },
+  {
+    "type": "fill",
+    "question": "The mass number is the number of protons plus ______.",
+    "answerText": "neutrons",
+    "explanation": "Mass number equals protons plus neutrons."
+  },
+  {
+    "type": "mcq",
+    "question": "How do you calculate the number of neutrons?",
+    "options": [
+      "Mass number minus atomic number",
+      "Atomic number plus electrons",
+      "Mass number plus atomic number"
+    ],
+    "answer": 0,
+    "explanation": "Neutrons = mass number - atomic number."
+  },
+  {
+    "type": "fill",
+    "question": "The symbol X can represent any chemical ______.",
+    "answerText": "element",
+    "explanation": "X is used as a general symbol for an element."
+  },
+  {
+    "type": "mcq",
+    "question": "Which number is usually larger?",
+    "options": [
+      "Mass number",
+      "Atomic number",
+      "Number of electrons in an ion"
+    ],
+    "answer": 0,
+    "explanation": "Mass number includes protons and neutrons, so it is usually larger."
+  },
+  {
+    "type": "mcq",
+    "question": "Aluminium has atomic number 13. How many protons does it have?",
+    "options": [
+      "13",
+      "14",
+      "27"
+    ],
+    "answer": 0,
+    "explanation": "Atomic number equals the number of protons."
+  },
+  {
+    "type": "fill",
+    "question": "A neutral aluminium atom with 13 protons has ______ electrons.",
+    "answerText": "13",
+    "explanation": "In a neutral atom, electrons equal protons."
+  },
+  {
+    "type": "mcq",
+    "question": "Aluminium has mass number 27 and atomic number 13. How many neutrons does it have?",
+    "options": [
+      "14",
+      "13",
+      "27"
+    ],
+    "answer": 0,
+    "explanation": "27 - 13 = 14 neutrons."
+  },
+  {
+    "type": "mcq",
+    "question": "Sodium has atomic number 11. How many protons does it have?",
+    "options": [
+      "11",
+      "12",
+      "23"
+    ],
+    "answer": 0,
+    "explanation": "Atomic number equals protons."
+  },
+  {
+    "type": "fill",
+    "question": "A neutral sodium atom with 11 protons has ______ electrons.",
+    "answerText": "11",
+    "explanation": "Neutral atoms have equal protons and electrons."
+  },
+  {
+    "type": "mcq",
+    "question": "Sodium has mass number 23 and atomic number 11. How many neutrons does it have?",
+    "options": [
+      "12",
+      "11",
+      "23"
+    ],
+    "answer": 0,
+    "explanation": "23 - 11 = 12 neutrons."
+  },
+  {
+    "type": "fill",
+    "question": "The periodic table is arranged by increasing atomic ______.",
+    "answerText": "number",
+    "explanation": "Elements are ordered by atomic number."
+  },
+  {
+    "type": "mcq",
+    "question": "Why does vanadium come before chromium?",
+    "options": [
+      "It has a lower atomic number",
+      "It has a higher mass number",
+      "It has more neutrons"
+    ],
+    "answer": 0,
+    "explanation": "Vanadium has atomic number 23, while chromium has atomic number 24."
+  },
+  {
+    "type": "fill",
+    "question": "Vanadium has atomic number ______.",
+    "answerText": "23",
+    "explanation": "Vanadium's atomic number is 23."
+  },
+  {
+    "type": "fill",
+    "question": "Chromium has atomic number ______.",
+    "answerText": "24",
+    "explanation": "Chromium's atomic number is 24."
+  },
+  {
+    "type": "mcq",
+    "question": "Calcium has mass number 40 and atomic number 20. How many neutrons does it have?",
+    "options": [
+      "20",
+      "40",
+      "60"
+    ],
+    "answer": 0,
+    "explanation": "40 - 20 = 20 neutrons."
+  },
+  {
+    "type": "mcq",
+    "question": "Platinum has atomic number 78. How many protons does it have?",
+    "options": [
+      "78",
+      "117",
+      "195"
+    ],
+    "answer": 0,
+    "explanation": "Atomic number equals protons."
+  },
+  {
+    "type": "fill",
+    "question": "Platinum has mass number 195 and atomic number 78, so it has ______ neutrons.",
+    "answerText": "117",
+    "explanation": "195 - 78 = 117 neutrons."
+  }
+];
+
+let currentQuestion=0;
+let score=0;
+let shuffledQuestions=[];
+
+function startGame(){
+shuffledQuestions=[...questions].sort(()=>Math.random()-0.5);
+currentQuestion=0;
+score=0;
+showQuestion();
+}
+
+function showQuestion(){
+const gameArea=document.getElementById("game-area");
+const q=shuffledQuestions[currentQuestion];
+let html=`<div><p><strong>Question ${currentQuestion+1}:</strong> ${q.question}</p>`;
+
+if(q.type==="mcq"){
+q.options.forEach((opt,idx)=>{
+html+=`<label style="display:block"><input type="radio" name="opt" value="${idx}"> ${opt}</label>`;
+});
+html+=`<button class="btn" onclick="checkMCQ()">Submit</button>`;
+}else{
+html+=`<input id="fill" type="text" style="width:100%;padding:10px;margin:10px 0;">`;
+html+=`<button class="btn" onclick="checkFill()">Submit</button>`;
+}
+
+html+=`<div id="feedback"></div></div>`;
+gameArea.innerHTML=html;
+}
+
+function checkMCQ(){
+const q=shuffledQuestions[currentQuestion];
+const sel=document.querySelector('input[name="opt"]:checked');
+if(!sel)return;
+
+const feedback=document.getElementById("feedback");
+
+if(parseInt(sel.value)===q.answer){
+feedback.innerHTML=`<p class="correct">Correct! ${q.explanation}</p>`;
+score++;
+}else{
+feedback.innerHTML=`<p class="incorrect">Incorrect. ${q.explanation}</p>`;
+}
+
+setTimeout(nextQuestion,1200);
+}
+
+function checkFill(){
+const q=shuffledQuestions[currentQuestion];
+const ans=document.getElementById("fill").value.trim().toLowerCase();
+const feedback=document.getElementById("feedback");
+
+if(ans.includes(q.answerText)){
+feedback.innerHTML=`<p class="correct">Correct! ${q.explanation}</p>`;
+score++;
+}else{
+feedback.innerHTML=`<p class="incorrect">Incorrect. ${q.explanation}</p>`;
+}
+
+setTimeout(nextQuestion,1200);
+}
+
+function nextQuestion(){
+currentQuestion++;
+if(currentQuestion<shuffledQuestions.length){
+showQuestion();
+}else{
+document.getElementById("game-area").innerHTML=`<h3>Quiz Complete!</h3><p>Your score: ${score}/${shuffledQuestions.length}</p><button class="btn" onclick="startGame()">Try Again</button>`;
+}
+}
+</script>
+
+</body>
+</html>
