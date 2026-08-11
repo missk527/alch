@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relative Mass</title>
+<style>
+:root{
+--brand:#0ea5e9;
+--ink:#1f2937;
+--paper:#fafafa;
+--card:#ffffff;
+--muted:#6b7280;
+--good:#16a34a;
+--bad:#dc2626;
+}
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+color:var(--ink);
+background:var(--paper);
+line-height:1.6;
+}
+header{
+background:linear-gradient(135deg,var(--brand),#6366f1);
+color:white;
+padding:20px 16px;
+text-align:center;
+}
+.wrap{max-width:1000px;margin:0 auto;padding:16px}
+.card{
+background:var(--card);
+border-radius:12px;
+padding:18px;
+box-shadow:0 6px 18px rgba(2,6,23,.08);
+margin:16px 0;
+}
+iframe{
+width:100%;
+max-width:900px;
+height:480px;
+border:0;
+border-radius:12px;
+}
+details{
+border:1px solid #e5e7eb;
+border-radius:10px;
+padding:10px 12px;
+margin:10px 0;
+background:#fff;
+}
+summary{
+font-weight:700;
+color:#0f766e;
+cursor:pointer;
+}
+.btn{
+background:var(--brand);
+color:white;
+border:0;
+border-radius:10px;
+padding:10px 14px;
+font-weight:700;
+cursor:pointer;
+}
+.correct{color:green}
+.incorrect{color:red}
+</style>
+</head>
+<body>
+
+<header>
+<h1>ALC3. Relative Mass</h1>
+</header>
+
+<div class="wrap">
+
+<div class="card">
+<iframe src="https://www.youtube.com/embed/DgnqpqXrhzs?si=BTlZAXBpt3L7dolg" allowfullscreen></iframe>
+</div>
+
+<section class="card">
+<h2>Key Notes (Synced with Video)</h2>
+
+<details open>
+<summary>Introduction | Why Relative Mass Is Used</summary>
+<ul>
+<li>Atoms are extremely small, with typical dimensions of about 10<sup>−8</sup> cm.</li>
+<li>Their actual masses are so tiny that relative values are more convenient than masses in kilograms.</li>
+<li>Atomic masses are compared with the internationally agreed carbon-12 standard.</li>
+</ul>
+</details>
+<details>
+<summary>Carbon-12 and the Unified Atomic Mass Unit</summary>
+<ul>
+<li>A carbon-12 atom is assigned a mass of exactly 12 unified atomic mass units, written as 12 u.</li>
+<li>One unified atomic mass unit is defined as one-twelfth of the mass of one carbon-12 atom.</li>
+<li>One u is approximately 1.66054 × 10<sup>−27</sup> kg.</li>
+</ul>
+</details>
+<details>
+<summary>Relative Isotopic Mass</summary>
+<ul>
+<li>Relative isotopic mass is the mass of an atom of an isotope compared with one-twelfth of the mass of a carbon-12 atom.</li>
+<li>It is approximately equal to the isotope’s mass number.</li>
+<li>For example, chlorine-35 and chlorine-37 have relative isotopic masses of approximately 35 and 37.</li>
+</ul>
+</details>
+<details>
+<summary>Relative Atomic Mass (A<sub>r</sub>)</summary>
+<ul>
+<li>Relative atomic mass is the weighted mean mass of an atom of an element compared with one-twelfth of the mass of a carbon-12 atom.</li>
+<li>It accounts for the relative abundances of all naturally occurring isotopes of an element.</li>
+<li>A<sub>r</sub> is usually not a whole number because most elements occur as mixtures of isotopes.</li>
+</ul>
+</details>
+<details>
+<summary>Calculating Relative Atomic Mass</summary>
+<ul>
+<li>Multiply each isotope’s relative isotopic mass by its percentage abundance.</li>
+<li>Add the products and divide the total by 100.</li>
+<li>For chlorine: [(35 × 75.77) + (37 × 24.23)] ÷ 100 ≈ 35.48.</li>
+<li>For rubidium: [(85.00 × 72.15) + (87.00 × 27.85)] ÷ 100 = 85.557.</li>
+</ul>
+</details>
+<details>
+<summary>Relative Molecular Mass (M<sub>r</sub>)</summary>
+<ul>
+<li>Relative molecular mass is the sum of the relative atomic masses of all atoms in one molecule.</li>
+<li>It is used for substances made of discrete molecules, including diatomic elements such as O<sub>2</sub>, N<sub>2</sub>, and Cl<sub>2</sub>.</li>
+<li>For Cl<sub>2</sub>: M<sub>r</sub> = 2 × 35.45 = 70.9.</li>
+</ul>
+</details>
+<details>
+<summary>Relative Formula Mass</summary>
+<ul>
+<li>Relative formula mass is used for ionic compounds, which form giant lattices rather than discrete molecules.</li>
+<li>It is calculated by adding the relative atomic masses of all atoms shown in one formula unit.</li>
+<li>For NaCl: relative formula mass = 23.00 + 35.45 = 58.45.</li>
+</ul>
+</details>
+<details>
+<summary>Worked Example | Na<sub>3</sub>PO<sub>4</sub></summary>
+<ul>
+<li>Na<sub>3</sub>PO<sub>4</sub> contains three sodium atoms, one phosphorus atom, and four oxygen atoms.</li>
+<li>Using A<sub>r</sub>(Na) = 23, A<sub>r</sub>(P) = 31, and A<sub>r</sub>(O) = 16:</li>
+<li>Relative formula mass = (3 × 23) + (1 × 31) + (4 × 16) = 69 + 31 + 64 = 164.</li>
+</ul>
+</details>
+<details>
+<summary>Exam Definitions and Common Misconceptions</summary>
+<ul>
+<li>A complete definition of A<sub>r</sub> must include “weighted mean,” comparison with one-twelfth, and carbon-12.</li>
+<li>The decimal value printed for an element in the periodic table is its relative atomic mass, not the mass number of one isotope.</li>
+<li>For example, magnesium has A<sub>r</sub> ≈ 24.31 because naturally occurring magnesium contains several isotopes.</li>
+<li>Relative isotopic mass, relative atomic mass, relative molecular mass, and relative formula mass are ratios and therefore have no units.</li>
+</ul>
+</details>
+<details>
+<summary>Summary | Choosing the Correct Relative Mass</summary>
+<ul>
+<li>Use relative isotopic mass for one specific isotope.</li>
+<li>Use A<sub>r</sub> for an element, taking isotope abundances into account.</li>
+<li>Use M<sub>r</sub> for a discrete molecule.</li>
+<li>Use relative formula mass for an ionic compound’s formula unit.</li>
+</ul>
+</details>
+
+</section>
+
+<section class="card">
+<h2>Quiz (40 Questions)</h2>
+<div id="game-area">
+<button class="btn" onclick="startGame()">Start Quiz</button>
+</div>
+</section>
+
+</div>
+
+<script>
+const questions=[
+  {
+    "type": "mcq",
+    "question": "Why are atomic masses usually expressed in relative terms?",
+    "options": [
+      "Actual atomic masses are extremely small",
+      "Atoms have no mass",
+      "Kilograms cannot measure matter"
+    ],
+    "answer": 0,
+    "explanation": "Relative masses avoid repeatedly using extremely small values in kilograms."
+  },
+  {
+    "type": "fill",
+    "question": "Atomic masses are compared with the isotope carbon-______.",
+    "answerText": "12",
+    "explanation": "Carbon-12 is the international reference standard."
+  },
+  {
+    "type": "mcq",
+    "question": "What symbol represents the unified atomic mass unit?",
+    "options": [
+      "u",
+      "kg",
+      "mol"
+    ],
+    "answer": 0,
+    "explanation": "The unified atomic mass unit is written as u."
+  },
+  {
+    "type": "fill",
+    "question": "A carbon-12 atom is assigned a mass of exactly ______ u.",
+    "answerText": "12",
+    "explanation": "By definition, one carbon-12 atom has a mass of exactly 12 u."
+  },
+  {
+    "type": "mcq",
+    "question": "How is one unified atomic mass unit defined?",
+    "options": [
+      "One-twelfth of the mass of a carbon-12 atom",
+      "The mass of one electron",
+      "One-twelfth of the mass of any carbon atom"
+    ],
+    "answer": 0,
+    "explanation": "One u is exactly one-twelfth of the mass of one carbon-12 atom."
+  },
+  {
+    "type": "fill",
+    "question": "One u is approximately 1.66054 × 10 to the power of ______ kg.",
+    "answerText": "-27",
+    "explanation": "One u is approximately 1.66054 × 10⁻²⁷ kg."
+  },
+  {
+    "type": "mcq",
+    "question": "What does relative isotopic mass compare?",
+    "options": [
+      "The mass of one isotope atom with one-twelfth of a carbon-12 atom",
+      "The abundance of two elements",
+      "The mass of one mole with one kilogram"
+    ],
+    "answer": 0,
+    "explanation": "Relative isotopic mass refers to one atom of a specified isotope."
+  },
+  {
+    "type": "fill",
+    "question": "The relative isotopic mass of chlorine-35 is approximately ______.",
+    "answerText": "35",
+    "explanation": "An isotope's relative isotopic mass is approximately its mass number."
+  },
+  {
+    "type": "mcq",
+    "question": "What is the approximate relative isotopic mass of chlorine-37?",
+    "options": [
+      "37",
+      "35.45",
+      "17"
+    ],
+    "answer": 0,
+    "explanation": "Chlorine-37 has a relative isotopic mass of approximately 37."
+  },
+  {
+    "type": "fill",
+    "question": "Which symbol represents relative atomic mass? ______",
+    "answerText": "ar",
+    "explanation": "Relative atomic mass is written as Aᵣ."
+  },
+  {
+    "type": "mcq",
+    "question": "Which phrase must appear in the definition of relative atomic mass?",
+    "options": [
+      "Weighted mean mass",
+      "Largest isotope mass",
+      "Total molecular mass"
+    ],
+    "answer": 0,
+    "explanation": "Aᵣ is a weighted mean because isotope abundances must be considered."
+  },
+  {
+    "type": "fill",
+    "question": "Relative atomic mass accounts for the percentage ______ of each isotope.",
+    "answerText": "abundance",
+    "explanation": "More abundant isotopes contribute more strongly to the weighted mean."
+  },
+  {
+    "type": "mcq",
+    "question": "Why is chlorine's relative atomic mass not a whole number?",
+    "options": [
+      "Chlorine is a mixture of isotopes",
+      "Chlorine atoms have changing proton numbers",
+      "Chlorine is always ionic"
+    ],
+    "answer": 0,
+    "explanation": "Its Aᵣ is the weighted mean of naturally occurring chlorine isotopes."
+  },
+  {
+    "type": "fill",
+    "question": "About 75.77% of natural chlorine is chlorine-______.",
+    "answerText": "35",
+    "explanation": "Chlorine-35 is the more abundant stable isotope."
+  },
+  {
+    "type": "mcq",
+    "question": "About what percentage of natural chlorine is chlorine-37?",
+    "options": [
+      "24.23%",
+      "75.77%",
+      "37.00%"
+    ],
+    "answer": 0,
+    "explanation": "The stated abundance of chlorine-37 is about 24.23%."
+  },
+  {
+    "type": "fill",
+    "question": "To calculate Aᵣ using percentage abundances, divide the sum of the weighted masses by ______.",
+    "answerText": "100",
+    "explanation": "Percentage abundances total 100, so the weighted sum is divided by 100."
+  },
+  {
+    "type": "mcq",
+    "question": "What is the approximate Aᵣ of chlorine using 75.77% chlorine-35 and 24.23% chlorine-37?",
+    "options": [
+      "35.48",
+      "36.00",
+      "70.90"
+    ],
+    "answer": 0,
+    "explanation": "[(35 × 75.77) + (37 × 24.23)] ÷ 100 is approximately 35.48."
+  },
+  {
+    "type": "fill",
+    "question": "A weighted mean gives greater influence to the more ______ isotope.",
+    "answerText": "abundant",
+    "explanation": "The isotope with the higher abundance contributes more to Aᵣ."
+  },
+  {
+    "type": "mcq",
+    "question": "Which quantity is represented by Mᵣ?",
+    "options": [
+      "Relative molecular mass",
+      "Relative isotopic mass",
+      "Molar concentration"
+    ],
+    "answer": 0,
+    "explanation": "Mᵣ denotes relative molecular mass."
+  },
+  {
+    "type": "fill",
+    "question": "Relative molecular mass is the sum of all the relative ______ masses in a molecule.",
+    "answerText": "atomic",
+    "explanation": "Mᵣ is found by adding the Aᵣ values of every atom in the molecule."
+  },
+  {
+    "type": "mcq",
+    "question": "Which substance exists as diatomic molecules?",
+    "options": [
+      "Chlorine, Cl₂",
+      "Sodium chloride, NaCl",
+      "Magnesium oxide, MgO"
+    ],
+    "answer": 0,
+    "explanation": "Elemental chlorine exists as discrete Cl₂ molecules."
+  },
+  {
+    "type": "fill",
+    "question": "If Aᵣ(Cl) is 35.45, the Mᵣ of Cl₂ is ______.",
+    "answerText": "70.9",
+    "explanation": "2 × 35.45 = 70.9."
+  },
+  {
+    "type": "mcq",
+    "question": "Which calculation gives the Mᵣ of O₂ when Aᵣ(O) = 16?",
+    "options": [
+      "2 × 16",
+      "16 ÷ 2",
+      "16 + 8"
+    ],
+    "answer": 0,
+    "explanation": "An O₂ molecule contains two oxygen atoms, so its Mᵣ is 32."
+  },
+  {
+    "type": "fill",
+    "question": "Oxygen and nitrogen normally exist as ______ molecules.",
+    "answerText": "diatomic",
+    "explanation": "Their elemental molecules contain two atoms: O₂ and N₂."
+  },
+  {
+    "type": "mcq",
+    "question": "For which substances is relative formula mass normally used?",
+    "options": [
+      "Ionic compounds",
+      "Single isotopes only",
+      "Monatomic noble gases only"
+    ],
+    "answer": 0,
+    "explanation": "Ionic lattices are described using formula units, not discrete molecules."
+  },
+  {
+    "type": "fill",
+    "question": "An ionic lattice contains repeating formula ______.",
+    "answerText": "units",
+    "explanation": "A formula unit shows the simplest whole-number ratio of ions."
+  },
+  {
+    "type": "mcq",
+    "question": "How is relative formula mass calculated?",
+    "options": [
+      "Add the Aᵣ values of all atoms in one formula unit",
+      "Average the proton numbers",
+      "Multiply all isotope abundances"
+    ],
+    "answer": 0,
+    "explanation": "Each atom's Aᵣ is counted according to the chemical formula and then summed."
+  },
+  {
+    "type": "fill",
+    "question": "If Aᵣ(Na) = 23.00 and Aᵣ(Cl) = 35.45, the relative formula mass of NaCl is ______.",
+    "answerText": "58.45",
+    "explanation": "23.00 + 35.45 = 58.45."
+  },
+  {
+    "type": "mcq",
+    "question": "How many sodium atoms are represented in Na₃PO₄?",
+    "options": [
+      "3",
+      "1",
+      "4"
+    ],
+    "answer": 0,
+    "explanation": "The subscript 3 applies to sodium."
+  },
+  {
+    "type": "fill",
+    "question": "How many oxygen atoms are represented in Na₃PO₄? ______",
+    "answerText": "4",
+    "explanation": "The oxygen subscript is 4."
+  },
+  {
+    "type": "mcq",
+    "question": "Using Aᵣ(Na) = 23, what is the sodium contribution to Na₃PO₄?",
+    "options": [
+      "69",
+      "23",
+      "92"
+    ],
+    "answer": 0,
+    "explanation": "Three sodium atoms contribute 3 × 23 = 69."
+  },
+  {
+    "type": "fill",
+    "question": "Using Aᵣ(P) = 31, one phosphorus atom contributes ______ to the relative formula mass.",
+    "answerText": "31",
+    "explanation": "There is one phosphorus atom, so its contribution is 1 × 31."
+  },
+  {
+    "type": "mcq",
+    "question": "Using Aᵣ(O) = 16, what is the oxygen contribution to Na₃PO₄?",
+    "options": [
+      "64",
+      "16",
+      "48"
+    ],
+    "answer": 0,
+    "explanation": "Four oxygen atoms contribute 4 × 16 = 64."
+  },
+  {
+    "type": "fill",
+    "question": "Using Aᵣ values Na = 23, P = 31, and O = 16, the relative formula mass of Na₃PO₄ is ______.",
+    "answerText": "164",
+    "explanation": "(3 × 23) + 31 + (4 × 16) = 164."
+  },
+  {
+    "type": "mcq",
+    "question": "Why is magnesium's periodic-table Aᵣ about 24.31?",
+    "options": [
+      "Natural magnesium contains isotopes in different abundances",
+      "Every magnesium atom has a mass number of 24.31",
+      "Magnesium forms diatomic molecules"
+    ],
+    "answer": 0,
+    "explanation": "The displayed value is the weighted mean for magnesium's natural isotope mixture."
+  },
+  {
+    "type": "fill",
+    "question": "A mass number is always a whole number because it counts protons and ______.",
+    "answerText": "neutrons",
+    "explanation": "Mass number is the total number of protons and neutrons in one nucleus."
+  },
+  {
+    "type": "mcq",
+    "question": "Which value in the periodic table is commonly decimal?",
+    "options": [
+      "Relative atomic mass",
+      "Proton number",
+      "Mass number of one isotope"
+    ],
+    "answer": 0,
+    "explanation": "Aᵣ is often decimal because it is an isotope-weighted mean."
+  },
+  {
+    "type": "fill",
+    "question": "Relative isotopic, atomic, molecular, and formula masses have no ______.",
+    "answerText": "units",
+    "explanation": "They are ratios relative to the carbon-12 standard and are dimensionless."
+  },
+  {
+    "type": "mcq",
+    "question": "Which relative mass should be used for one specific isotope?",
+    "options": [
+      "Relative isotopic mass",
+      "Relative molecular mass",
+      "Relative formula mass"
+    ],
+    "answer": 0,
+    "explanation": "Relative isotopic mass describes an atom of a specified isotope."
+  },
+  {
+    "type": "fill",
+    "question": "The correct relative mass for a discrete molecule is relative ______ mass.",
+    "answerText": "molecular",
+    "explanation": "Relative molecular mass applies to substances made of discrete molecules."
+  }
+];
+
+let currentQuestion=0;
+let score=0;
+let shuffledQuestions=[];
+
+function startGame(){
+shuffledQuestions=[...questions].sort(()=>Math.random()-0.5);
+currentQuestion=0;
+score=0;
+showQuestion();
+}
+
+function showQuestion(){
+const gameArea=document.getElementById("game-area");
+const q=shuffledQuestions[currentQuestion];
+let html=`<div><p><strong>Question ${currentQuestion+1}:</strong> ${q.question}</p>`;
+
+if(q.type==="mcq"){
+q.options.forEach((opt,idx)=>{
+html+=`<label style="display:block"><input type="radio" name="opt" value="${idx}"> ${opt}</label>`;
+});
+html+=`<button class="btn" onclick="checkMCQ()">Submit</button>`;
+}else{
+html+=`<input id="fill" type="text" style="width:100%;padding:10px;margin:10px 0;">`;
+html+=`<button class="btn" onclick="checkFill()">Submit</button>`;
+}
+
+html+=`<div id="feedback"></div></div>`;
+gameArea.innerHTML=html;
+}
+
+function checkMCQ(){
+const q=shuffledQuestions[currentQuestion];
+const sel=document.querySelector('input[name="opt"]:checked');
+if(!sel)return;
+
+const feedback=document.getElementById("feedback");
+
+if(parseInt(sel.value)===q.answer){
+feedback.innerHTML=`<p class="correct">Correct! ${q.explanation}</p>`;
+score++;
+}else{
+feedback.innerHTML=`<p class="incorrect">Incorrect. ${q.explanation}</p>`;
+}
+
+setTimeout(nextQuestion,1200);
+}
+
+function checkFill(){
+const q=shuffledQuestions[currentQuestion];
+const ans=document.getElementById("fill").value.trim().toLowerCase();
+const feedback=document.getElementById("feedback");
+
+if(ans.includes(q.answerText)){
+feedback.innerHTML=`<p class="correct">Correct! ${q.explanation}</p>`;
+score++;
+}else{
+feedback.innerHTML=`<p class="incorrect">Incorrect. ${q.explanation}</p>`;
+}
+
+setTimeout(nextQuestion,1200);
+}
+
+function nextQuestion(){
+currentQuestion++;
+if(currentQuestion<shuffledQuestions.length){
+showQuestion();
+}else{
+document.getElementById("game-area").innerHTML=`<h3>Quiz Complete!</h3><p>Your score: ${score}/${shuffledQuestions.length}</p><button class="btn" onclick="startGame()">Try Again</button>`;
+}
+}
+</script>
+
+</body>
+</html>
