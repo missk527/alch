@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mass Spectrometry</title>
+<style>
+:root{
+--brand:#0ea5e9;
+--ink:#1f2937;
+--paper:#fafafa;
+--card:#ffffff;
+--muted:#6b7280;
+--good:#16a34a;
+--bad:#dc2626;
+}
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+color:var(--ink);
+background:var(--paper);
+line-height:1.6;
+}
+header{
+background:linear-gradient(135deg,var(--brand),#6366f1);
+color:white;
+padding:20px 16px;
+text-align:center;
+}
+.wrap{max-width:1000px;margin:0 auto;padding:16px}
+.card{
+background:var(--card);
+border-radius:12px;
+padding:18px;
+box-shadow:0 6px 18px rgba(2,6,23,.08);
+margin:16px 0;
+}
+iframe{
+width:100%;
+max-width:900px;
+height:480px;
+border:0;
+border-radius:12px;
+}
+details{
+border:1px solid #e5e7eb;
+border-radius:10px;
+padding:10px 12px;
+margin:10px 0;
+background:#fff;
+}
+summary{
+font-weight:700;
+color:#0f766e;
+cursor:pointer;
+}
+.btn{
+background:var(--brand);
+color:white;
+border:0;
+border-radius:10px;
+padding:10px 14px;
+font-weight:700;
+cursor:pointer;
+}
+.correct{color:green}
+.incorrect{color:red}
+</style>
+</head>
+<body>
+
+<header>
+<h1>ALC4. Mass Spectrometry</h1>
+</header>
+
+<div class="wrap">
+
+<div class="card">
+<iframe src="https://www.youtube.com/embed/7LWxKgiPSsI?si=7NWyJDF-oRbHqedY" allowfullscreen></iframe>
+</div>
+
+<section class="card">
+<h2>Key Notes (Synced with Video)</h2>
+<details open><summary>Introduction | Mass Spectrometry</summary><ul>
+<li>Mass spectrometry is a form of molecular chemical analysis.</li>
+<li>The sample is ionised, the ions are separated according to their mass-to-charge ratio (m/z), and the ions are detected to produce a mass spectrum.</li>
+<li>Mass spectra provide structural information, identify unknown compounds, and determine the relative abundances of isotopes.</li>
+</ul></details>
+<details><summary>Time-of-Flight Apparatus</summary><ul>
+<li>The apparatus contains a sample inlet, a flight tube, and a detector near the end of the tube.</li>
+<li>It is kept under vacuum so that ions do not collide with air particles.</li>
+</ul></details>
+<details><summary>Ionisation</summary><ul>
+<li>The sample is dissolved in a volatile solvent, which vaporises easily.</li>
+<li>The solution is forced through a hollow needle connected to the positive terminal of a high-voltage supply.</li>
+<li>Tiny positively charged droplets form and lose electrons.</li>
+<li>As the solvent evaporates, the droplets become smaller until single positively charged ions remain.</li>
+</ul></details>
+<details><summary>Acceleration and Flight</summary><ul>
+<li>Positive ions are attracted towards a negatively charged electric plate and accelerate towards it.</li>
+<li>All ions receive the same kinetic energy: heavier ions travel more slowly and lighter ions travel faster.</li>
+<li>The ions pass through a hole in the plate, form a beam, and travel along the flight tube.</li>
+<li>Their time of flight is recorded when they reach the detector.</li>
+</ul></details>
+<details><summary>Detection and the Mass Spectrum</summary><ul>
+<li>At the detector, positive ions gain electrons and cause an electric current to flow.</li>
+<li>The current produces a signal that is sent to a computer, which generates a mass spectrum.</li>
+</ul></details>
+<details><summary>Low-resolution Mass Spectrometry</summary><ul>
+<li>Mass spectrometry can measure values to five decimal places; measurements to one decimal place are described as low resolution.</li>
+<li>Isotopes have the same number of protons but different numbers of neutrons.</li>
+<li>Chlorine-35 and chlorine-37 both contain 17 protons; they contain 18 and 20 neutrons respectively.</li>
+<li>Their different masses give different m/z values, so they are detected separately.</li>
+</ul></details>
+<details><summary>Reading a Chlorine Mass Spectrum</summary><ul>
+<li>Chlorine produces peaks at m/z 35 and 37 for chlorine-35 and chlorine-37.</li>
+<li>Peak height represents relative isotopic abundance.</li>
+<li>In the example, chlorine-35 has 75% abundance and chlorine-37 has 25% abundance.</li>
+</ul></details>
+<details><summary>Calculating Relative Atomic Mass</summary><ul>
+<li>Multiply each isotopic mass by its percentage abundance, add the products, and divide by 100.</li>
+<li>For chlorine: [(35 × 75) + (37 × 25)] ÷ 100 = 35.5.</li>
+<li>The result is closer to 35 because chlorine-35 is more abundant.</li>
+<li>For element X: [(24 × 78.7) + (25 × 10.13) + (26 × 11.17)] ÷ 100 = 24.3247, or 24.32 to two decimal places.</li>
+<li>An element with a relative atomic mass of about 24.3 is magnesium.</li>
+</ul></details>
+<details><summary>Process and Exam Skills</summary><ul>
+<li>After vaporisation and before detection, particles undergo ionisation, acceleration, and separation according to m/z.</li>
+<li>In the exam example, the separation stage is described as deflection.</li>
+<li>Always follow the requested number of decimal places in calculation questions.</li>
+</ul></details>
+
+</section>
+
+<section class="card">
+<h2>Quiz (40 Questions)</h2>
+<div id="game-area">
+<button class="btn" onclick="startGame()">Start Quiz</button>
+</div>
+</section>
+
+</div>
+
+<script>
+const questions=[
+{type:"mcq",question:"What is mass spectrometry used for?",options:["Molecular chemical analysis","Measuring temperature","Separating liquids by boiling point"],answer:0,explanation:"Mass spectrometry is a form of molecular chemical analysis."},
+{type:"fill",question:"The first main step is to form ______ from the sample.",answerText:"ions",explanation:"The sample is ionised."},
+{type:"mcq",question:"Ions are separated according to which quantity?",options:["Mass-to-charge ratio","Boiling point","Atomic radius"],answer:0,explanation:"Mass spectrometers separate ions by m/z."},
+{type:"fill",question:"In m/z, m represents ______.",answerText:"mass",explanation:"m represents mass."},
+{type:"mcq",question:"In m/z, what does z represent?",options:["Charge","Neutron number","Speed"],answer:0,explanation:"z represents ionic charge."},
+{type:"fill",question:"After separation, the ions are ______.",answerText:"detected",explanation:"Detection produces the data for a mass spectrum."},
+{type:"mcq",question:"Which output is produced by a mass spectrometer?",options:["A mass spectrum","A titration curve","A chromatogram only"],answer:0,explanation:"Detected signals are displayed as a mass spectrum."},
+{type:"fill",question:"Mass spectra can help identify ______ compounds.",answerText:"unknown",explanation:"Spectra can be used to identify unknown compounds."},
+{type:"mcq",question:"Which isotope information can a spectrum provide?",options:["Relative abundance","Electron colour","Melting time"],answer:0,explanation:"Peak sizes reveal relative isotopic abundances."},
+{type:"fill",question:"The long tube in TOF mass spectrometry is the ______ tube.",answerText:"flight",explanation:"Ions travel along the flight tube."},
+{type:"mcq",question:"Why is the apparatus kept under vacuum?",options:["To prevent ion-air collisions","To cool the ions","To increase neutron number"],answer:0,explanation:"A vacuum removes air particles that could collide with ions."},
+{type:"fill",question:"The sample is dissolved in a ______ solvent.",answerText:"volatile",explanation:"A volatile solvent vaporises easily."},
+{type:"mcq",question:"Through what is the vaporised solution forced?",options:["A hollow needle","A filter funnel","A condenser"],answer:0,explanation:"It passes through a hollow needle."},
+{type:"fill",question:"The needle is connected to the ______ terminal of a high-voltage supply.",answerText:"positive",explanation:"The needle is connected to the positive terminal."},
+{type:"mcq",question:"What forms as the solvent leaves the needle?",options:["Positively charged droplets","Negative crystals","Neutral metal atoms"],answer:0,explanation:"Tiny positively charged droplets form."},
+{type:"fill",question:"The droplets become positive by losing ______.",answerText:"electrons",explanation:"Loss of electrons creates positive charge."},
+{type:"mcq",question:"What happens as the volatile solvent evaporates?",options:["Droplets become smaller","Ions become neutrons","The flight tube fills with air"],answer:0,explanation:"Evaporation reduces droplet size."},
+{type:"fill",question:"Eventually each droplet becomes a single positively charged ______.",answerText:"ion",explanation:"Solvent evaporation leaves an ion."},
+{type:"mcq",question:"Which plate attracts the positive ions?",options:["A negatively charged plate","A positively charged plate","A neutral plastic plate"],answer:0,explanation:"Opposite charges attract."},
+{type:"fill",question:"All ions are given the same kinetic ______.",answerText:"energy",explanation:"The electric field gives the ions equal kinetic energy."},
+{type:"mcq",question:"At equal kinetic energy, which ions move faster?",options:["Lighter ions","Heavier ions","All move at the same speed"],answer:0,explanation:"Lighter ions have a higher speed."},
+{type:"fill",question:"Heavier ions travel at a ______ speed.",answerText:"lower",explanation:"Greater mass means lower speed at equal kinetic energy."},
+{type:"mcq",question:"How do ions enter the flight tube?",options:["Through a hole in the negative plate","Through the detector","Through an air vent"],answer:0,explanation:"They pass through a hole and form a beam."},
+{type:"fill",question:"The ions travel along the tube as a ______.",answerText:"beam",explanation:"The plate opening forms a beam of ions."},
+{type:"mcq",question:"What is recorded when ions arrive at the detector?",options:["Time of flight","Boiling point","Volume"],answer:0,explanation:"The detector records arrival time."},
+{type:"fill",question:"At the detector, positive ions pick up an ______.",answerText:"electron",explanation:"The ions gain electrons at the detector."},
+{type:"mcq",question:"What is produced when ions gain electrons at the detector?",options:["An electric current","A vacuum leak","A precipitate"],answer:0,explanation:"Electron transfer causes a current."},
+{type:"fill",question:"The detector sends its signal to a ______.",answerText:"computer",explanation:"A computer generates the mass spectrum."},
+{type:"mcq",question:"Low-resolution mass spectrometry gives values to about how many decimal places?",options:["One","Five","Ten"],answer:0,explanation:"The speech defines one-decimal-place data as low resolution."},
+{type:"fill",question:"High-precision mass data may be measured to ______ decimal places.",answerText:"five",explanation:"The video states that five decimal places are possible."},
+{type:"mcq",question:"What do isotopes of one element have in common?",options:["The same number of protons","The same number of neutrons","The same mass number"],answer:0,explanation:"Isotopes share a proton number."},
+{type:"fill",question:"Isotopes have different numbers of ______.",answerText:"neutrons",explanation:"Different neutron numbers give different isotope masses."},
+{type:"mcq",question:"How many protons do both chlorine isotopes have?",options:["17","18","20"],answer:0,explanation:"All chlorine atoms contain 17 protons."},
+{type:"fill",question:"Chlorine-35 contains ______ neutrons.",answerText:"18",explanation:"35 − 17 = 18."},
+{type:"mcq",question:"How many neutrons are in chlorine-37?",options:["20","17","18"],answer:0,explanation:"37 − 17 = 20."},
+{type:"fill",question:"The chlorine isotope peaks occur at m/z 35 and ______.",answerText:"37",explanation:"The two peaks represent chlorine-35 and chlorine-37."},
+{type:"mcq",question:"What does peak height indicate?",options:["Relative abundance","Proton charge","Flight-tube length"],answer:0,explanation:"Taller peaks represent greater relative abundance."},
+{type:"fill",question:"In the example, chlorine-35 has ______% abundance.",answerText:"75",explanation:"The example uses 75% chlorine-35."},
+{type:"mcq",question:"What is chlorine’s calculated relative atomic mass in the example?",options:["35.5","37.0","17.0"],answer:0,explanation:"[(35 × 75) + (37 × 25)] ÷ 100 = 35.5."},
+{type:"fill",question:"Element X with relative atomic mass 24.32 is identified as ______.",answerText:"magnesium",explanation:"Magnesium has a relative atomic mass of about 24.3."}
+];
+
+const carbohydrateQuestions=[
+{type:"mcq",question:"What can a reducing sugar do?",options:["Donate electrons","Absorb iodine","Neutralise alkali"],answer:0,explanation:"Reducing sugars donate electrons to other molecules."},
+{type:"fill",question:"All ______ are reducing sugars.",answerText:"monosaccharides",explanation:"All monosaccharides are reducing sugars."},
+{type:"mcq",question:"Which is a monosaccharide?",options:["Glucose","Sucrose","Cellulose"],answer:0,explanation:"Glucose is a reducing monosaccharide."},
+{type:"fill",question:"Fructose and galactose are reducing ______.",answerText:"sugars",explanation:"Both are reducing monosaccharides."},
+{type:"mcq",question:"Which disaccharide is a reducing sugar?",options:["Maltose","Sucrose","Neither"],answer:0,explanation:"Maltose is a reducing disaccharide."},
+{type:"fill",question:"Another reducing disaccharide named in the video is ______.",answerText:"lactose",explanation:"Lactose is a reducing sugar."},
+{type:"mcq",question:"Which sugar is non-reducing?",options:["Sucrose","Glucose","Galactose"],answer:0,explanation:"Sucrose is a non-reducing disaccharide."},
+{type:"fill",question:"Glycogen and cellulose are ______.",answerText:"polysaccharides",explanation:"They are non-reducing carbohydrates."},
+{type:"mcq",question:"The term sugar normally refers to which carbohydrates?",options:["Monosaccharides and disaccharides","Polysaccharides only","All carbohydrates"],answer:0,explanation:"Sugars are simple carbohydrates."},
+{type:"fill",question:"Benedict’s reagent is ______ before the test.",answerText:"blue",explanation:"Benedict’s reagent begins blue."},
+{type:"mcq",question:"How much food sample is used in Benedict’s test?",options:["2 cm³","5 cm³","10 cm³"],answer:0,explanation:"Use 2 cm³ of food sample."},
+{type:"fill",question:"Add ______ cm³ of Benedict’s reagent.",answerText:"2",explanation:"Equal 2 cm³ volumes are used."},
+{type:"mcq",question:"How should Benedict’s test be heated?",options:["In a gently boiling water bath","Over a direct flame","In an ice bath"],answer:0,explanation:"Use a gently boiling water bath."},
+{type:"fill",question:"Heat Benedict’s test for ______ minutes.",answerText:"5",explanation:"The mixture is heated for 5 minutes."},
+{type:"mcq",question:"What does a blue Benedict’s result mean?",options:["No reducing sugar detected","High sugar concentration","Starch is present"],answer:0,explanation:"Remaining blue is a negative result."},
+{type:"fill",question:"A colour change in Benedict’s test is a ______ result.",answerText:"positive",explanation:"A colour change indicates reducing sugar."},
+{type:"mcq",question:"Which colour indicates a low reducing-sugar concentration?",options:["Green","Orange","Brick red"],answer:0,explanation:"Green indicates a low concentration."},
+{type:"fill",question:"A medium concentration produces an ______ colour.",answerText:"orange",explanation:"Orange suggests a medium concentration."},
+{type:"mcq",question:"Which colour indicates a high reducing-sugar concentration?",options:["Brick red","Green","Blue"],answer:0,explanation:"Brick red indicates a high concentration."},
+{type:"fill",question:"Non-reducing sugars do not react ______ with Benedict’s reagent.",answerText:"directly",explanation:"They must first be hydrolysed."},
+{type:"mcq",question:"What must be done before testing specifically for non-reducing sugars?",options:["Test for reducing sugars","Add iodine","Filter the sample"],answer:0,explanation:"Begin with Benedict’s test for reducing sugars."},
+{type:"fill",question:"Continue the non-reducing-sugar test only if the first Benedict’s result is ______.",answerText:"negative",explanation:"A negative first test means reducing sugar was not detected."},
+{type:"mcq",question:"Which acid is added to test for non-reducing sugars?",options:["Dilute hydrochloric acid","Concentrated sulfuric acid","Ethanoic acid"],answer:0,explanation:"Use dilute hydrochloric acid."},
+{type:"fill",question:"Add ______ cm³ of dilute hydrochloric acid to a fresh sample.",answerText:"2",explanation:"Add 2 cm³ of dilute hydrochloric acid."},
+{type:"mcq",question:"What does acid heating do to non-reducing sugars?",options:["Hydrolyses them into reducing sugars","Turns them into starch","Removes all water"],answer:0,explanation:"Acid hydrolysis produces reducing sugars."},
+{type:"fill",question:"The breakdown reaction is called ______.",answerText:"hydrolysis",explanation:"Hydrolysis breaks larger sugars using water."},
+{type:"mcq",question:"Why is sodium hydrogen carbonate added?",options:["To neutralise the acid","To add reducing sugar","To make iodine"],answer:0,explanation:"It is alkaline and neutralises the acidic solution."},
+{type:"fill",question:"Sodium hydrogen carbonate is an ______ substance.",answerText:"alkaline",explanation:"It neutralises hydrochloric acid."},
+{type:"mcq",question:"After neutralisation, which test is repeated?",options:["Benedict’s test","Iodine test","Biuret test"],answer:0,explanation:"Repeat Benedict’s test for newly formed reducing sugars."},
+{type:"fill",question:"A positive second Benedict’s test shows the original sample contained ______ sugar.",answerText:"non-reducing",explanation:"Hydrolysis converted the original non-reducing sugar."},
+{type:"mcq",question:"What does a colorimeter measure?",options:["Light absorbance","Temperature","Precipitate volume only"],answer:0,explanation:"A colorimeter measures absorbance of light."},
+{type:"fill",question:"Low absorbance suggests a ______ sugar concentration.",answerText:"low",explanation:"Lower absorbance suggests less reducing sugar."},
+{type:"mcq",question:"What does high absorbance suggest?",options:["A higher reducing-sugar concentration","No carbohydrate","Only starch"],answer:0,explanation:"Higher absorbance suggests more reducing sugar."},
+{type:"fill",question:"After filtering, the solid left behind is the ______.",answerText:"precipitate",explanation:"The collected solid is called the precipitate."},
+{type:"mcq",question:"What does a greater precipitate mass indicate?",options:["More sugar","Less sugar","No sugar"],answer:0,explanation:"More precipitate indicates more reducing sugar."},
+{type:"fill",question:"The reagent used to test for starch is ______ solution.",answerText:"iodine",explanation:"Iodine solution is the starch-test reagent."},
+{type:"mcq",question:"What is the initial colour of iodine solution?",options:["Orange","Blue-black","Green"],answer:0,explanation:"Iodine solution begins orange."},
+{type:"fill",question:"For the starch test, add a few ______ of iodine solution.",answerText:"drops",explanation:"Only a few drops are required."},
+{type:"mcq",question:"What is a negative iodine-test result?",options:["The mixture stays orange","It turns blue-black","It forms a brick-red precipitate"],answer:0,explanation:"Staying orange means starch is absent."},
+{type:"fill",question:"A positive starch test changes from orange to ______.",answerText:"blue-black",explanation:"Blue-black indicates starch is present."}
+];
+
+const oldQuestions=[
+  {
+    "type": "mcq",
+    "question": "Why are atomic masses usually expressed in relative terms?",
+    "options": [
+      "Actual atomic masses are extremely small",
+      "Atoms have no mass",
+      "Kilograms cannot measure matter"
+    ],
+    "answer": 0,
+    "explanation": "Relative masses avoid repeatedly using extremely small values in kilograms."
+  },
+  {
+    "type": "fill",
+    "question": "Atomic masses are compared with the isotope carbon-______.",
+    "answerText": "12",
+    "explanation": "Carbon-12 is the international reference standard."
+  },
+  {
+    "type": "mcq",
+    "question": "What symbol represents the unified atomic mass unit?",
+    "options": [
+      "u",
+      "kg",
+      "mol"
+    ],
+    "answer": 0,
+    "explanation": "The unified atomic mass unit is written as u."
+  },
+  {
+    "type": "fill",
+    "question": "A carbon-12 atom is assigned a mass of exactly ______ u.",
+    "answerText": "12",
+    "explanation": "By definition, one carbon-12 atom has a mass of exactly 12 u."
+  },
+  {
+    "type": "mcq",
+    "question": "How is one unified atomic mass unit defined?",
+    "options": [
+      "One-twelfth of the mass of a carbon-12 atom",
+      "The mass of one electron",
+      "One-twelfth of the mass of any carbon atom"
+    ],
+    "answer": 0,
+    "explanation": "One u is exactly one-twelfth of the mass of one carbon-12 atom."
+  },
+  {
+    "type": "fill",
+    "question": "One u is approximately 1.66054 × 10 to the power of ______ kg.",
+    "answerText": "-27",
+    "explanation": "One u is approximately 1.66054 × 10⁻²⁷ kg."
+  },
+  {
+    "type": "mcq",
+    "question": "What does relative isotopic mass compare?",
+    "options": [
+      "The mass of one isotope atom with one-twelfth of a carbon-12 atom",
+      "The abundance of two elements",
+      "The mass of one mole with one kilogram"
+    ],
+    "answer": 0,
+    "explanation": "Relative isotopic mass refers to one atom of a specified isotope."
+  },
+  {
+    "type": "fill",
+    "question": "The relative isotopic mass of chlorine-35 is approximately ______.",
+    "answerText": "35",
+    "explanation": "An isotope's relative isotopic mass is approximately its mass number."
+  },
+  {
+    "type": "mcq",
+    "question": "What is the approximate relative isotopic mass of chlorine-37?",
+    "options": [
+      "37",
+      "35.45",
+      "17"
+    ],
+    "answer": 0,
+    "explanation": "Chlorine-37 has a relative isotopic mass of approximately 37."
+  },
+  {
+    "type": "fill",
+    "question": "Which symbol represents relative atomic mass? ______",
+    "answerText": "ar",
+    "explanation": "Relative atomic mass is written as Aᵣ."
+  },
+  {
+    "type": "mcq",
+    "question": "Which phrase must appear in the definition of relative atomic mass?",
+    "options": [
+      "Weighted mean mass",
+      "Largest isotope mass",
+      "Total molecular mass"
+    ],
+    "answer": 0,
+    "explanation": "Aᵣ is a weighted mean because isotope abundances must be considered."
+  },
+  {
+    "type": "fill",
+    "question": "Relative atomic mass accounts for the percentage ______ of each isotope.",
+    "answerText": "abundance",
+    "explanation": "More abundant isotopes contribute more strongly to the weighted mean."
+  },
+  {
+    "type": "mcq",
+    "question": "Why is chlorine's relative atomic mass not a whole number?",
+    "options": [
+      "Chlorine is a mixture of isotopes",
+      "Chlorine atoms have changing proton numbers",
+      "Chlorine is always ionic"
+    ],
+    "answer": 0,
+    "explanation": "Its Aᵣ is the weighted mean of naturally occurring chlorine isotopes."
+  },
+  {
+    "type": "fill",
+    "question": "About 75.77% of natural chlorine is chlorine-______.",
+    "answerText": "35",
+    "explanation": "Chlorine-35 is the more abundant stable isotope."
+  },
+  {
+    "type": "mcq",
+    "question": "About what percentage of natural chlorine is chlorine-37?",
+    "options": [
+      "24.23%",
+      "75.77%",
+      "37.00%"
+    ],
+    "answer": 0,
+    "explanation": "The stated abundance of chlorine-37 is about 24.23%."
+  },
+  {
+    "type": "fill",
+    "question": "To calculate Aᵣ using percentage abundances, divide the sum of the weighted masses by ______.",
+    "answerText": "100",
+    "explanation": "Percentage abundances total 100, so the weighted sum is divided by 100."
+  },
+  {
+    "type": "mcq",
+    "question": "What is the approximate Aᵣ of chlorine using 75.77% chlorine-35 and 24.23% chlorine-37?",
+    "options": [
+      "35.48",
+      "36.00",
+      "70.90"
+    ],
+    "answer": 0,
+    "explanation": "[(35 × 75.77) + (37 × 24.23)] ÷ 100 is approximately 35.48."
+  },
+  {
+    "type": "fill",
+    "question": "A weighted mean gives greater influence to the more ______ isotope.",
+    "answerText": "abundant",
+    "explanation": "The isotope with the higher abundance contributes more to Aᵣ."
+  },
+  {
+    "type": "mcq",
+    "question": "Which quantity is represented by Mᵣ?",
+    "options": [
+      "Relative molecular mass",
+      "Relative isotopic mass",
+      "Molar concentration"
+    ],
+    "answer": 0,
+    "explanation": "Mᵣ denotes relative molecular mass."
+  },
+  {
+    "type": "fill",
+    "question": "Relative molecular mass is the sum of all the relative ______ masses in a molecule.",
+    "answerText": "atomic",
+    "explanation": "Mᵣ is found by adding the Aᵣ values of every atom in the molecule."
+  },
+  {
+    "type": "mcq",
+    "question": "Which substance exists as diatomic molecules?",
+    "options": [
+      "Chlorine, Cl₂",
+      "Sodium chloride, NaCl",
+      "Magnesium oxide, MgO"
+    ],
+    "answer": 0,
+    "explanation": "Elemental chlorine exists as discrete Cl₂ molecules."
+  },
+  {
+    "type": "fill",
+    "question": "If Aᵣ(Cl) is 35.45, the Mᵣ of Cl₂ is ______.",
+    "answerText": "70.9",
+    "explanation": "2 × 35.45 = 70.9."
+  },
+  {
+    "type": "mcq",
+    "question": "Which calculation gives the Mᵣ of O₂ when Aᵣ(O) = 16?",
+    "options": [
+      "2 × 16",
+      "16 ÷ 2",
+      "16 + 8"
+    ],
+    "answer": 0,
+    "explanation": "An O₂ molecule contains two oxygen atoms, so its Mᵣ is 32."
+  },
+  {
+    "type": "fill",
+    "question": "Oxygen and nitrogen normally exist as ______ molecules.",
+    "answerText": "diatomic",
+    "explanation": "Their elemental molecules contain two atoms: O₂ and N₂."
+  },
+  {
+    "type": "mcq",
+    "question": "For which substances is relative formula mass normally used?",
+    "options": [
+      "Ionic compounds",
+      "Single isotopes only",
+      "Monatomic noble gases only"
+    ],
+    "answer": 0,
+    "explanation": "Ionic lattices are described using formula units, not discrete molecules."
+  },
+  {
+    "type": "fill",
+    "question": "An ionic lattice contains repeating formula ______.",
+    "answerText": "units",
+    "explanation": "A formula unit shows the simplest whole-number ratio of ions."
+  },
+  {
+    "type": "mcq",
+    "question": "How is relative formula mass calculated?",
+    "options": [
+      "Add the Aᵣ values of all atoms in one formula unit",
+      "Average the proton numbers",
+      "Multiply all isotope abundances"
+    ],
+    "answer": 0,
+    "explanation": "Each atom's Aᵣ is counted according to the chemical formula and then summed."
+  },
+  {
+    "type": "fill",
+    "question": "If Aᵣ(Na) = 23.00 and Aᵣ(Cl) = 35.45, the relative formula mass of NaCl is ______.",
+    "answerText": "58.45",
+    "explanation": "23.00 + 35.45 = 58.45."
+  },
+  {
+    "type": "mcq",
+    "question": "How many sodium atoms are represented in Na₃PO₄?",
+    "options": [
+      "3",
+      "1",
+      "4"
+    ],
+    "answer": 0,
+    "explanation": "The subscript 3 applies to sodium."
+  },
+  {
+    "type": "fill",
+    "question": "How many oxygen atoms are represented in Na₃PO₄? ______",
+    "answerText": "4",
+    "explanation": "The oxygen subscript is 4."
+  },
+  {
+    "type": "mcq",
+    "question": "Using Aᵣ(Na) = 23, what is the sodium contribution to Na₃PO₄?",
+    "options": [
+      "69",
+      "23",
+      "92"
+    ],
+    "answer": 0,
+    "explanation": "Three sodium atoms contribute 3 × 23 = 69."
+  },
+  {
+    "type": "fill",
+    "question": "Using Aᵣ(P) = 31, one phosphorus atom contributes ______ to the relative formula mass.",
+    "answerText": "31",
+    "explanation": "There is one phosphorus atom, so its contribution is 1 × 31."
+  },
+  {
+    "type": "mcq",
+    "question": "Using Aᵣ(O) = 16, what is the oxygen contribution to Na₃PO₄?",
+    "options": [
+      "64",
+      "16",
+      "48"
+    ],
+    "answer": 0,
+    "explanation": "Four oxygen atoms contribute 4 × 16 = 64."
+  },
+  {
+    "type": "fill",
+    "question": "Using Aᵣ values Na = 23, P = 31, and O = 16, the relative formula mass of Na₃PO₄ is ______.",
+    "answerText": "164",
+    "explanation": "(3 × 23) + 31 + (4 × 16) = 164."
+  },
+  {
+    "type": "mcq",
+    "question": "Why is magnesium's periodic-table Aᵣ about 24.31?",
+    "options": [
+      "Natural magnesium contains isotopes in different abundances",
+      "Every magnesium atom has a mass number of 24.31",
+      "Magnesium forms diatomic molecules"
+    ],
+    "answer": 0,
+    "explanation": "The displayed value is the weighted mean for magnesium's natural isotope mixture."
+  },
+  {
+    "type": "fill",
+    "question": "A mass number is always a whole number because it counts protons and ______.",
+    "answerText": "neutrons",
+    "explanation": "Mass number is the total number of protons and neutrons in one nucleus."
+  },
+  {
+    "type": "mcq",
+    "question": "Which value in the periodic table is commonly decimal?",
+    "options": [
+      "Relative atomic mass",
+      "Proton number",
+      "Mass number of one isotope"
+    ],
+    "answer": 0,
+    "explanation": "Aᵣ is often decimal because it is an isotope-weighted mean."
+  },
+  {
+    "type": "fill",
+    "question": "Relative isotopic, atomic, molecular, and formula masses have no ______.",
+    "answerText": "units",
+    "explanation": "They are ratios relative to the carbon-12 standard and are dimensionless."
+  },
+  {
+    "type": "mcq",
+    "question": "Which relative mass should be used for one specific isotope?",
+    "options": [
+      "Relative isotopic mass",
+      "Relative molecular mass",
+      "Relative formula mass"
+    ],
+    "answer": 0,
+    "explanation": "Relative isotopic mass describes an atom of a specified isotope."
+  },
+  {
+    "type": "fill",
+    "question": "The correct relative mass for a discrete molecule is relative ______ mass.",
+    "answerText": "molecular",
+    "explanation": "Relative molecular mass applies to substances made of discrete molecules."
+  }
+];
+
+let currentQuestion=0;
+let score=0;
+let shuffledQuestions=[];
+
+function startGame(){
+shuffledQuestions=[...questions].sort(()=>Math.random()-0.5);
+currentQuestion=0;
+score=0;
+showQuestion();
+}
+
+function showQuestion(){
+const gameArea=document.getElementById("game-area");
+const q=shuffledQuestions[currentQuestion];
+let html=`<div><p><strong>Question ${currentQuestion+1}:</strong> ${q.question}</p>`;
+
+if(q.type==="mcq"){
+q.options.forEach((opt,idx)=>{
+html+=`<label style="display:block"><input type="radio" name="opt" value="${idx}"> ${opt}</label>`;
+});
+html+=`<button class="btn" onclick="checkMCQ()">Submit</button>`;
+}else{
+html+=`<input id="fill" type="text" style="width:100%;padding:10px;margin:10px 0;">`;
+html+=`<button class="btn" onclick="checkFill()">Submit</button>`;
+}
+
+html+=`<div id="feedback"></div></div>`;
+gameArea.innerHTML=html;
+}
+
+function checkMCQ(){
+const q=shuffledQuestions[currentQuestion];
+const sel=document.querySelector('input[name="opt"]:checked');
+if(!sel)return;
+
+const feedback=document.getElementById("feedback");
+
+if(parseInt(sel.value)===q.answer){
+feedback.innerHTML=`<p class="correct">Correct! ${q.explanation}</p>`;
+score++;
+}else{
+feedback.innerHTML=`<p class="incorrect">Incorrect. ${q.explanation}</p>`;
+}
+
+setTimeout(nextQuestion,1200);
+}
+
+function checkFill(){
+const q=shuffledQuestions[currentQuestion];
+const ans=document.getElementById("fill").value.trim().toLowerCase();
+const feedback=document.getElementById("feedback");
+
+if(ans.includes(q.answerText)){
+feedback.innerHTML=`<p class="correct">Correct! ${q.explanation}</p>`;
+score++;
+}else{
+feedback.innerHTML=`<p class="incorrect">Incorrect. ${q.explanation}</p>`;
+}
+
+setTimeout(nextQuestion,1200);
+}
+
+function nextQuestion(){
+currentQuestion++;
+if(currentQuestion<shuffledQuestions.length){
+showQuestion();
+}else{
+document.getElementById("game-area").innerHTML=`<h3>Quiz Complete!</h3><p>Your score: ${score}/${shuffledQuestions.length}</p><button class="btn" onclick="startGame()">Try Again</button>`;
+}
+}
+</script>
+
+</body>
+</html>
