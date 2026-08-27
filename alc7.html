@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atom Economy</title>
+<style>
+:root{
+--brand:#0ea5e9;
+--ink:#1f2937;
+--paper:#fafafa;
+--card:#ffffff;
+--muted:#6b7280;
+--good:#16a34a;
+--bad:#dc2626;
+}
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+color:var(--ink);
+background:var(--paper);
+line-height:1.6;
+}
+header{
+background:linear-gradient(135deg,var(--brand),#6366f1);
+color:white;
+padding:20px 16px;
+text-align:center;
+}
+.wrap{max-width:1000px;margin:0 auto;padding:16px}
+.card{
+background:var(--card);
+border-radius:12px;
+padding:18px;
+box-shadow:0 6px 18px rgba(2,6,23,.08);
+margin:16px 0;
+}
+iframe{
+width:100%;
+max-width:900px;
+height:480px;
+border:0;
+border-radius:12px;
+}
+details{
+border:1px solid #e5e7eb;
+border-radius:10px;
+padding:10px 12px;
+margin:10px 0;
+background:#fff;
+}
+summary{
+font-weight:700;
+color:#0f766e;
+cursor:pointer;
+}
+.btn{
+background:var(--brand);
+color:white;
+border:0;
+border-radius:10px;
+padding:10px 14px;
+font-weight:700;
+cursor:pointer;
+}
+.correct{color:green}
+.incorrect{color:red}
+</style>
+</head>
+<body>
+
+<header>
+<h1>ALC7. Atom Economy</h1>
+</header>
+
+<div class="wrap">
+
+<div class="card">
+<iframe src="https://www.youtube.com/embed/MKyzlKxjdSg?si=zSvbdctGb3UsRZYW" allowfullscreen></iframe>
+</div>
+
+<section class="card">
+<h2>Key Notes (Synced with Video)</h2>
+
+<details open>
+<summary>Definition and Formula</summary>
+<ul>
+<li>Atom economy measures the mass of the desired product as a percentage of the mass of all products.</li>
+<li>Atom economy = (molar mass of desired product ÷ total molar mass of all products) × 100.</li>
+<li>Stoichiometric coefficients in the balanced equation must be included in the calculation.</li>
+<li>The total mass of the products equals the total mass of the reactants because atoms are rearranged, not created or destroyed.</li>
+</ul>
+</details>
+<details>
+<summary>Dichloromethane Worked Example</summary>
+<ul>
+<li>Dichloromethane, CH₂Cl₂, is the desired product and HCl is the by-product.</li>
+<li>The molar mass of CH₂Cl₂ is 85 g mol⁻¹, while the molar mass of HCl is 36.5 g mol⁻¹.</li>
+<li>The reaction forms one mole of CH₂Cl₂ and two moles of HCl, giving a total product mass of 158 g per equation amount.</li>
+<li>The atom economy is (85 ÷ 158) × 100 = 53.8%.</li>
+</ul>
+</details>
+<details>
+<summary>Importance of Atom Economy</summary>
+<ul>
+<li>Chemical reactions may produce unwanted by-products, which become chemical waste.</li>
+<li>A higher atom economy reduces waste and uses raw materials more efficiently.</li>
+<li>Improving atom economy makes chemical processes more sustainable.</li>
+<li>This is especially important for reactions carried out on a large industrial scale.</li>
+</ul>
+</details>
+<details>
+<summary>Reaction Types</summary>
+<ul>
+<li>Addition reactions normally have 100% atom economy because all reactant atoms form one product.</li>
+<li>Addition across a double bond produces no by-products.</li>
+<li>Substitution and elimination reactions usually have atom economies below 100%.</li>
+<li>These reactions form more than one product, so unwanted by-products may be produced.</li>
+</ul>
+</details>
+<details>
+<summary>Ethanol Production</summary>
+<ul>
+<li>Fermentation converts glucose into two moles of ethanol and two moles of carbon dioxide.</li>
+<li>Ethanol has a molar mass of 46 g mol⁻¹ and carbon dioxide has a molar mass of 44 g mol⁻¹.</li>
+<li>The desired ethanol mass is 92 g and the total product mass is 180 g, giving an atom economy of 51.1%.</li>
+<li>Hydration of ethene produces only ethanol, so its atom economy is 100%.</li>
+<li>Hydration is preferable by atom economy because it produces no by-products.</li>
+</ul>
+</details>
+<details>
+<summary>Magnesium Hydroxide Example</summary>
+<ul>
+<li>The balanced equation is MgCl₂ + 2NaOH → Mg(OH)₂ + 2NaCl.</li>
+<li>Magnesium hydroxide is the desired product; sodium chloride is the by-product.</li>
+<li>The molar masses are 58.3 g mol⁻¹ for Mg(OH)₂ and 58.5 g mol⁻¹ for NaCl.</li>
+<li>The atom economy is 58.3 ÷ [58.3 + (2 × 58.5)] × 100 = 33.3%.</li>
+</ul>
+</details>
+<details>
+<summary>Theoretical Mass and Percentage Yield</summary>
+<ul>
+<li>Moles are calculated using moles = mass ÷ molar mass.</li>
+<li>Ten grams of MgCl₂ corresponds to approximately 0.105 mol.</li>
+<li>The 1:1 ratio between MgCl₂ and Mg(OH)₂ gives approximately 0.105 mol of Mg(OH)₂, with a maximum mass of about 6.1 g.</li>
+<li>Percentage yield = (actual yield ÷ theoretical yield) × 100.</li>
+<li>An actual mass of 5.0 g from a theoretical 6.1 g gives a yield of 82.0%.</li>
+</ul>
+</details>
+<details>
+<summary>Atom Economy Compared with Yield</summary>
+<ul>
+<li>Atom economy and percentage yield measure different aspects of a reaction.</li>
+<li>Atom economy is determined by the balanced equation and the proportion of desired products.</li>
+<li>Percentage yield compares the amount actually obtained with the theoretical maximum.</li>
+<li>A reaction can have a low atom economy but a high percentage yield, as in the magnesium hydroxide example.</li>
+</ul>
+</details>
+
+</section>
+
+<section class="card">
+<h2>Quiz (40 Questions)</h2>
+<div id="game-area">
+<button class="btn" onclick="startGame()">Start Quiz</button>
+</div>
+</section>
+
+</div>
+
+<script>
+const questions=[
+  {
+    "type": "mcq",
+    "question": "What does atom economy measure?",
+    "options": [
+      "The desired product mass as a percentage of all product mass",
+      "The reaction rate",
+      "The purity of one reactant"
+    ],
+    "answer": 0,
+    "explanation": "Atom economy measures how much product mass becomes the desired product."
+  },
+  {
+    "type": "mcq",
+    "question": "What is the atom economy formula?",
+    "options": [
+      "Desired product molar mass divided by total product molar mass, multiplied by 100",
+      "Actual yield divided by theoretical yield",
+      "Reactant mass divided by time"
+    ],
+    "answer": 0,
+    "explanation": "Atom economy uses the desired and total product molar masses."
+  },
+  {
+    "type": "mcq",
+    "question": "Why are molar masses used in atom-economy calculations?",
+    "options": [
+      "They represent the relative masses in the balanced equation",
+      "They measure reaction speed",
+      "They identify catalysts"
+    ],
+    "answer": 0,
+    "explanation": "Molar masses convert the equation into relative product masses."
+  },
+  {
+    "type": "mcq",
+    "question": "Why does total product mass equal total reactant mass?",
+    "options": [
+      "Atoms are rearranged but conserved",
+      "Products have no atoms",
+      "Energy becomes matter"
+    ],
+    "answer": 0,
+    "explanation": "Chemical reactions conserve atoms and mass."
+  },
+  {
+    "type": "mcq",
+    "question": "What must be included when an equation forms two moles of a product?",
+    "options": [
+      "The coefficient of two",
+      "Only one molar mass",
+      "The reaction temperature"
+    ],
+    "answer": 0,
+    "explanation": "Stoichiometric coefficients multiply the relevant molar mass."
+  },
+  {
+    "type": "mcq",
+    "question": "What is the desired product in the dichloromethane example?",
+    "options": [
+      "CH₂Cl₂",
+      "HCl",
+      "Cl₂"
+    ],
+    "answer": 0,
+    "explanation": "Dichloromethane is the target product."
+  },
+  {
+    "type": "mcq",
+    "question": "What is the by-product in the dichloromethane example?",
+    "options": [
+      "HCl",
+      "CH₂Cl₂",
+      "CH₄"
+    ],
+    "answer": 0,
+    "explanation": "Hydrogen chloride is also produced."
+  },
+  {
+    "type": "mcq",
+    "question": "What is the molar mass of CH₂Cl₂?",
+    "options": [
+      "85 g mol⁻¹",
+      "36.5 g mol⁻¹",
+      "158 g mol⁻¹"
+    ],
+    "answer": 0,
+    "explanation": "12 + 2(1) + 2(35.5) = 85."
+  },
+  {
+    "type": "mcq",
+    "question": "What is the molar mass of HCl?",
+    "options": [
+      "36.5 g mol⁻¹",
+      "35.5 g mol⁻¹",
+      "85 g mol⁻¹"
+    ],
+    "answer": 0,
+    "explanation": "1 + 35.5 = 36.5."
+  },
+  {
+    "type": "mcq",
+    "question": "How many moles of HCl form per mole of CH₂Cl₂ in the example?",
+    "options": [
+      "Two",
+      "One",
+      "Three"
+    ],
+    "answer": 0,
+    "explanation": "The balanced equation produces two moles of HCl."
+  },
+  {
+    "type": "mcq",
+    "question": "What is the total product mass in the dichloromethane calculation?",
+    "options": [
+      "158 g",
+      "121.5 g",
+      "85 g"
+    ],
+    "answer": 0,
+    "explanation": "85 + 2(36.5) = 158."
+  },
+  {
+    "type": "mcq",
+    "question": "What is the atom economy for producing CH₂Cl₂?",
+    "options": [
+      "53.8%",
+      "85.0%",
+      "36.5%"
+    ],
+    "answer": 0,
+    "explanation": "(85 ÷ 158) × 100 = 53.8%."
+  },
+  {
+    "type": "mcq",
+    "question": "What are unwanted products called?",
+    "options": [
+      "By-products or waste products",
+      "Catalysts",
+      "Reactants"
+    ],
+    "answer": 0,
+    "explanation": "Unwanted products contribute to chemical waste."
+  },
+  {
+    "type": "mcq",
+    "question": "How does higher atom economy affect waste?",
+    "options": [
+      "It reduces waste",
+      "It increases waste",
+      "It has no effect"
+    ],
+    "answer": 0,
+    "explanation": "More atoms enter the desired product."
+  },
+  {
+    "type": "mcq",
+    "question": "Why is high atom economy desirable industrially?",
+    "options": [
+      "It improves efficiency and sustainability",
+      "It always increases temperature",
+      "It prevents all reactions"
+    ],
+    "answer": 0,
+    "explanation": "Less raw material becomes waste."
+  },
+  {
+    "type": "mcq",
+    "question": "Which reaction type commonly has 100% atom economy?",
+    "options": [
+      "Addition",
+      "Substitution",
+      "Elimination"
+    ],
+    "answer": 0,
+    "explanation": "Addition reactions normally form a single product."
+  },
+  {
+    "type": "mcq",
+    "question": "Why can an addition reaction have 100% atom economy?",
+    "options": [
+      "It produces no by-products",
+      "It uses no reactants",
+      "It has zero yield"
+    ],
+    "answer": 0,
+    "explanation": "All reactant atoms are incorporated into one product."
+  },
+  {
+    "type": "mcq",
+    "question": "What happens to the double bond in the addition example?",
+    "options": [
+      "It opens as another molecule adds across it",
+      "It becomes a triple bond",
+      "It leaves the molecule"
+    ],
+    "answer": 0,
+    "explanation": "Addition occurs across the double bond."
+  },
+  {
+    "type": "mcq",
+    "question": "Why are substitution reactions often below 100% atom economy?",
+    "options": [
+      "They form more than one product",
+      "They form no products",
+      "They contain no atoms"
+    ],
+    "answer": 0,
+    "explanation": "One or more products may be unwanted."
+  },
+  {
+    "type": "mcq",
+    "question": "Why are elimination reactions often below 100% atom economy?",
+    "options": [
+      "By-products are formed",
+      "Only one product forms",
+      "All atoms enter the desired product"
+    ],
+    "answer": 0,
+    "explanation": "Elimination commonly creates multiple products."
+  },
+  {
+    "type": "mcq",
+    "question": "What are the products of glucose fermentation in the example?",
+    "options": [
+      "Ethanol and carbon dioxide",
+      "Ethene and water",
+      "Methane and oxygen"
+    ],
+    "answer": 0,
+    "explanation": "Glucose ferments into ethanol and carbon dioxide."
+  },
+  {
+    "type": "mcq",
+    "question": "What is the molar mass of ethanol?",
+    "options": [
+      "46 g mol⁻¹",
+      "44 g mol⁻¹",
+      "92 g mol⁻¹"
+    ],
+    "answer": 0,
+    "explanation": "C₂H₆O has a molar mass of 46."
+  },
+  {
+    "type": "mcq",
+    "question": "What is the molar mass of carbon dioxide?",
+    "options": [
+      "44 g mol⁻¹",
+      "46 g mol⁻¹",
+      "16 g mol⁻¹"
+    ],
+    "answer": 0,
+    "explanation": "12 + 2(16) = 44."
+  },
+  {
+    "type": "mcq",
+    "question": "How many moles of ethanol form in the fermentation equation?",
+    "options": [
+      "Two",
+      "One",
+      "Four"
+    ],
+    "answer": 0,
+    "explanation": "The equation produces two moles of ethanol."
+  },
+  {
+    "type": "mcq",
+    "question": "What is the desired ethanol mass per equation amount?",
+    "options": [
+      "92 g",
+      "46 g",
+      "180 g"
+    ],
+    "answer": 0,
+    "explanation": "Two moles give 2 × 46 = 92 g."
+  },
+  {
+    "type": "mcq",
+    "question": "What is the total product mass in fermentation?",
+    "options": [
+      "180 g",
+      "92 g",
+      "88 g"
+    ],
+    "answer": 0,
+    "explanation": "2(46) + 2(44) = 180 g."
+  },
+  {
+    "type": "mcq",
+    "question": "What is the atom economy of ethanol fermentation?",
+    "options": [
+      "51.1%",
+      "100%",
+      "82.0%"
+    ],
+    "answer": 0,
+    "explanation": "(92 ÷ 180) × 100 = 51.1%."
+  },
+  {
+    "type": "mcq",
+    "question": "What is the atom economy of ethene hydration?",
+    "options": [
+      "100%",
+      "51.1%",
+      "33.3%"
+    ],
+    "answer": 0,
+    "explanation": "Hydration forms ethanol without a by-product."
+  },
+  {
+    "type": "mcq",
+    "question": "Which ethanol-production method is preferable by atom economy?",
+    "options": [
+      "Hydration of ethene",
+      "Fermentation",
+      "Both have identical atom economy"
+    ],
+    "answer": 0,
+    "explanation": "Hydration has 100% atom economy."
+  },
+  {
+    "type": "mcq",
+    "question": "What is the balanced magnesium hydroxide equation?",
+    "options": [
+      "MgCl₂ + 2NaOH → Mg(OH)₂ + 2NaCl",
+      "MgCl₂ + NaOH → MgOH + NaCl",
+      "Mg + H₂O → MgO + H₂"
+    ],
+    "answer": 0,
+    "explanation": "The coefficients balance Mg, Cl, Na, O and H."
+  },
+  {
+    "type": "mcq",
+    "question": "What is the desired product in that reaction?",
+    "options": [
+      "Mg(OH)₂",
+      "NaCl",
+      "MgCl₂"
+    ],
+    "answer": 0,
+    "explanation": "Magnesium hydroxide is made to treat indigestion."
+  },
+  {
+    "type": "mcq",
+    "question": "What is the table-salt by-product?",
+    "options": [
+      "NaCl",
+      "NaOH",
+      "MgCl₂"
+    ],
+    "answer": 0,
+    "explanation": "Sodium chloride is table salt."
+  },
+  {
+    "type": "mcq",
+    "question": "What is the molar mass of Mg(OH)₂?",
+    "options": [
+      "58.3 g mol⁻¹",
+      "58.5 g mol⁻¹",
+      "95.3 g mol⁻¹"
+    ],
+    "answer": 0,
+    "explanation": "24.3 + 2(16) + 2(1) = 58.3."
+  },
+  {
+    "type": "mcq",
+    "question": "What is the molar mass of NaCl?",
+    "options": [
+      "58.5 g mol⁻¹",
+      "35.5 g mol⁻¹",
+      "23.0 g mol⁻¹"
+    ],
+    "answer": 0,
+    "explanation": "23.0 + 35.5 = 58.5."
+  },
+  {
+    "type": "mcq",
+    "question": "What is the atom economy for Mg(OH)₂ production?",
+    "options": [
+      "33.3%",
+      "58.3%",
+      "82.0%"
+    ],
+    "answer": 0,
+    "explanation": "58.3 divided by 58.3 + 2(58.5), multiplied by 100, is 33.3%."
+  },
+  {
+    "type": "mcq",
+    "question": "Which equation calculates moles?",
+    "options": [
+      "Moles = mass ÷ molar mass",
+      "Moles = mass × molar mass",
+      "Moles = yield ÷ 100"
+    ],
+    "answer": 0,
+    "explanation": "Divide mass by molar mass."
+  },
+  {
+    "type": "mcq",
+    "question": "What mole ratio links MgCl₂ and Mg(OH)₂?",
+    "options": [
+      "1:1",
+      "1:2",
+      "2:1"
+    ],
+    "answer": 0,
+    "explanation": "Their coefficients are both one."
+  },
+  {
+    "type": "mcq",
+    "question": "What maximum Mg(OH)₂ mass can form from 10 g MgCl₂ in the example?",
+    "options": [
+      "About 6.1 g",
+      "10.0 g",
+      "5.0 g"
+    ],
+    "answer": 0,
+    "explanation": "The example gives approximately 0.105 mol and 6.1 g."
+  },
+  {
+    "type": "mcq",
+    "question": "How is percentage yield calculated?",
+    "options": [
+      "Actual yield divided by theoretical yield, multiplied by 100",
+      "Desired mass divided by all product mass",
+      "Molar mass divided by moles"
+    ],
+    "answer": 0,
+    "explanation": "Percentage yield compares actual and theoretical amounts."
+  },
+  {
+    "type": "mcq",
+    "question": "Which statement correctly compares the final results?",
+    "options": [
+      "The yield is high at 82.0%, but atom economy is low at 33.3%",
+      "Atom economy and yield are always equal",
+      "The yield is 33.3% and atom economy is 82.0%"
+    ],
+    "answer": 0,
+    "explanation": "Atom economy and yield are separate measures."
+  }
+];
+
+let currentQuestion=0;
+let score=0;
+let shuffledQuestions=[];
+
+function startGame(){
+shuffledQuestions=[...questions].sort(()=>Math.random()-0.5);
+currentQuestion=0;
+score=0;
+showQuestion();
+}
+
+function showQuestion(){
+const gameArea=document.getElementById("game-area");
+const q=shuffledQuestions[currentQuestion];
+let html=`<div><p><strong>Question ${currentQuestion+1}:</strong> ${q.question}</p>`;
+
+if(q.type==="mcq"){
+q.options.forEach((opt,idx)=>{
+html+=`<label style="display:block"><input type="radio" name="opt" value="${idx}"> ${opt}</label>`;
+});
+html+=`<button class="btn" onclick="checkMCQ()">Submit</button>`;
+}else{
+html+=`<input id="fill" type="text" style="width:100%;padding:10px;margin:10px 0;">`;
+html+=`<button class="btn" onclick="checkFill()">Submit</button>`;
+}
+
+html+=`<div id="feedback"></div></div>`;
+gameArea.innerHTML=html;
+}
+
+function checkMCQ(){
+const q=shuffledQuestions[currentQuestion];
+const sel=document.querySelector('input[name="opt"]:checked');
+if(!sel)return;
+
+const feedback=document.getElementById("feedback");
+
+if(parseInt(sel.value)===q.answer){
+feedback.innerHTML=`<p class="correct">Correct! ${q.explanation}</p>`;
+score++;
+}else{
+feedback.innerHTML=`<p class="incorrect">Incorrect. ${q.explanation}</p>`;
+}
+
+setTimeout(nextQuestion,1200);
+}
+
+function checkFill(){
+const q=shuffledQuestions[currentQuestion];
+const ans=document.getElementById("fill").value.trim().toLowerCase();
+const feedback=document.getElementById("feedback");
+
+if(ans.includes(q.answerText)){
+feedback.innerHTML=`<p class="correct">Correct! ${q.explanation}</p>`;
+score++;
+}else{
+feedback.innerHTML=`<p class="incorrect">Incorrect. ${q.explanation}</p>`;
+}
+
+setTimeout(nextQuestion,1200);
+}
+
+function nextQuestion(){
+currentQuestion++;
+if(currentQuestion<shuffledQuestions.length){
+showQuestion();
+}else{
+document.getElementById("game-area").innerHTML=`<h3>Quiz Complete!</h3><p>Your score: ${score}/${shuffledQuestions.length}</p><button class="btn" onclick="startGame()">Try Again</button>`;
+}
+}
+</script>
+
+</body>
+</html>
