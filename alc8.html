@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solution Volume and Concentration</title>
+<style>
+:root{
+--brand:#0ea5e9;
+--ink:#1f2937;
+--paper:#fafafa;
+--card:#ffffff;
+--muted:#6b7280;
+--good:#16a34a;
+--bad:#dc2626;
+}
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+color:var(--ink);
+background:var(--paper);
+line-height:1.6;
+}
+header{
+background:linear-gradient(135deg,var(--brand),#6366f1);
+color:white;
+padding:20px 16px;
+text-align:center;
+}
+.wrap{max-width:1000px;margin:0 auto;padding:16px}
+.card{
+background:var(--card);
+border-radius:12px;
+padding:18px;
+box-shadow:0 6px 18px rgba(2,6,23,.08);
+margin:16px 0;
+}
+iframe{
+width:100%;
+max-width:900px;
+height:480px;
+border:0;
+border-radius:12px;
+}
+details{
+border:1px solid #e5e7eb;
+border-radius:10px;
+padding:10px 12px;
+margin:10px 0;
+background:#fff;
+}
+summary{
+font-weight:700;
+color:#0f766e;
+cursor:pointer;
+}
+.btn{
+background:var(--brand);
+color:white;
+border:0;
+border-radius:10px;
+padding:10px 14px;
+font-weight:700;
+cursor:pointer;
+}
+.correct{color:green}
+.incorrect{color:red}
+</style>
+</head>
+<body>
+
+<header>
+<h1>ALC8. Solution Volume and Concentration</h1>
+</header>
+
+<div class="wrap">
+
+<div class="card">
+<iframe src="https://www.youtube.com/embed/x4QxYDyHst0?si=-YNT7ku9IlKEzPkr" allowfullscreen></iframe>
+</div>
+
+<section class="card">
+<h2>Key Notes (Synced with Video)</h2>
+
+<details open>
+<summary>Concentration | Core Concept</summary>
+<ul>
+<li>Concentration measures how much solute is dissolved in a given volume of solution.</li>
+<li>A concentrated solution contains a large amount of solute per unit volume.</li>
+<li>A dilute solution contains a small amount of solute per unit volume.</li>
+</ul>
+</details>
+<details>
+<summary>Core Equation | Moles, Concentration, and Volume</summary>
+<ul>
+<li>The central equation is <strong>n = c × V</strong>.</li>
+<li><strong>n</strong> is the amount in moles (mol), <strong>c</strong> is concentration in mol dm<sup>−3</sup>, and <strong>V</strong> is volume in dm<sup>3</sup>.</li>
+<li>Rearrangements are <strong>c = n ÷ V</strong> and <strong>V = n ÷ c</strong>.</li>
+<li>Always convert the volume to dm<sup>3</sup> before using these equations.</li>
+</ul>
+</details>
+<details>
+<summary>Volume Conversion | cm³ and dm³</summary>
+<ul>
+<li>1 dm<sup>3</sup> equals 1000 cm<sup>3</sup>.</li>
+<li>Convert cm<sup>3</sup> to dm<sup>3</sup> by dividing by 1000.</li>
+<li>Convert dm<sup>3</sup> to cm<sup>3</sup> by multiplying by 1000.</li>
+<li>For example, 100 cm<sup>3</sup> = 0.100 dm<sup>3</sup> and 25.0 cm<sup>3</sup> = 0.0250 dm<sup>3</sup>.</li>
+</ul>
+</details>
+<details>
+<summary>Worked Example | Calculating Moles</summary>
+<ul>
+<li>For 10 dm<sup>3</sup> of a 2 mol dm<sup>−3</sup> solution, use n = cV.</li>
+<li>n = 2 × 10 = 20 mol.</li>
+<li>The concentration and volume units cancel correctly to leave moles.</li>
+</ul>
+</details>
+<details>
+<summary>Mixing Solutions | Potassium-Ion Concentration</summary>
+<ul>
+<li>100 cm<sup>3</sup> of 0.1 mol dm<sup>−3</sup> KCl contains 0.010 mol KCl and therefore 0.010 mol K<sup>+</sup>.</li>
+<li>100 cm<sup>3</sup> of 0.1 mol dm<sup>−3</sup> K<sub>2</sub>CO<sub>3</sub> contains 0.010 mol K<sub>2</sub>CO<sub>3</sub> and therefore 0.020 mol K<sup>+</sup>.</li>
+<li>Total K<sup>+</sup> = 0.030 mol and total volume = 0.200 dm<sup>3</sup>.</li>
+<li>[K<sup>+</sup>] = 0.030 ÷ 0.200 = 0.15 mol dm<sup>−3</sup>.</li>
+</ul>
+</details>
+<details>
+<summary>Citric Acid | Small-Volume Calculation</summary>
+<ul>
+<li>Convert 25.0 cm<sup>3</sup> to 0.0250 dm<sup>3</sup>.</li>
+<li>For a 0.010 mol dm<sup>−3</sup> solution, n = 0.010 × 0.0250.</li>
+<li>The amount of citric acid is 2.50 × 10<sup>−4</sup> mol.</li>
+</ul>
+</details>
+<details>
+<summary>Stoichiometry | H₃PO₄ and NaOH</summary>
+<ul>
+<li>30 cm<sup>3</sup> of 0.1 mol dm<sup>−3</sup> H<sub>3</sub>PO<sub>4</sub> contains 0.003 mol of acid.</li>
+<li>One mole of H<sub>3</sub>PO<sub>4</sub> reacts with three moles of NaOH, so 0.009 mol NaOH is required.</li>
+<li>At 0.1 mol dm<sup>−3</sup>, V = n ÷ c = 0.009 ÷ 0.1 = 0.09 dm<sup>3</sup>.</li>
+<li>0.09 dm<sup>3</sup> equals 90 cm<sup>3</sup>.</li>
+</ul>
+</details>
+<details>
+<summary>Mass to Concentration | Magnesium Chloride</summary>
+<ul>
+<li>First calculate amount using n = m ÷ M.</li>
+<li>M<sub>r</sub>(MgCl<sub>2</sub>) = 24.3 + (2 × 35.5) = 95.3 g mol<sup>−1</sup>.</li>
+<li>6.00 g MgCl<sub>2</sub> contains approximately 0.0630 mol MgCl<sub>2</sub>.</li>
+<li>Each formula unit produces two Cl<sup>−</sup> ions, giving 0.126 mol Cl<sup>−</sup>.</li>
+<li>In 0.100 dm<sup>3</sup>, [Cl<sup>−</sup>] = 0.126 ÷ 0.100 = 1.26 mol dm<sup>−3</sup>.</li>
+</ul>
+</details>
+<details>
+<summary>Exam Method | Reliable Calculation Steps</summary>
+<ul>
+<li>Identify the required quantity and write the relevant equation.</li>
+<li>Convert volumes into dm<sup>3</sup> and masses into moles where necessary.</li>
+<li>Use formula subscripts or balanced-equation ratios to find the required species' amount.</li>
+<li>Substitute values with units, calculate carefully, and give an appropriately rounded final answer.</li>
+</ul>
+</details>
+
+</section>
+
+<section class="card">
+<h2>Quiz (40 Questions)</h2>
+<div id="game-area">
+<button class="btn" onclick="startGame()">Start Quiz</button>
+</div>
+</section>
+
+</div>
+
+<script>
+const questions=[
+{"type":"mcq","question":"What does concentration measure?","options":["The amount of solute in a given volume of solution","The mass of the container","The temperature of the solvent"],"answer":0,"explanation":"Concentration measures the amount of solute present per unit volume."},
+{"type":"fill","question":"The substance that is dissolved is called the ______.","answerText":"solute","explanation":"A solute dissolves in a solvent to form a solution."},
+{"type":"mcq","question":"Which equation calculates the number of moles in a solution?","options":["n = c × V","n = c ÷ V","n = V ÷ c"],"answer":0,"explanation":"Multiply concentration by volume in dm³."},
+{"type":"fill","question":"In n = cV, n represents the number of ______.","answerText":"moles","explanation":"The symbol n is the amount of substance in moles."},
+{"type":"mcq","question":"What is the usual unit of solution concentration?","options":["mol dm⁻³","mol cm⁻³","g dm³"],"answer":0,"explanation":"Solution concentration is commonly measured in mol dm⁻³."},
+{"type":"fill","question":"Volume must be expressed in ______ cubed when using n = cV.","answerText":"decimeters","explanation":"The required volume unit is dm³."},
+{"type":"mcq","question":"How many cubic centimetres are in 1 dm³?","options":["1000","100","10"],"answer":0,"explanation":"1 dm³ equals 1000 cm³."},
+{"type":"fill","question":"To convert cm³ to dm³, divide by ______.","answerText":"1000","explanation":"There are 1000 cm³ in each dm³."},
+{"type":"mcq","question":"What is 100 cm³ in dm³?","options":["0.100 dm³","1.00 dm³","0.010 dm³"],"answer":0,"explanation":"100 ÷ 1000 = 0.100 dm³."},
+{"type":"fill","question":"25.0 cm³ is equal to ______ dm³.","answerText":"0.025","explanation":"25.0 ÷ 1000 = 0.0250 dm³."},
+{"type":"mcq","question":"Which rearrangement calculates concentration?","options":["c = n ÷ V","c = n × V","c = V ÷ n"],"answer":0,"explanation":"Concentration is amount divided by solution volume."},
+{"type":"fill","question":"The equation used to calculate volume is V = n divided by ______.","answerText":"c","explanation":"Rearranging n = cV gives V = n/c."},
+{"type":"mcq","question":"How many moles are in 10 dm³ of a 2 mol dm⁻³ solution?","options":["20 mol","5 mol","12 mol"],"answer":0,"explanation":"n = 2 × 10 = 20 mol."},
+{"type":"fill","question":"A solution containing a large amount of solute per unit volume is ______.","answerText":"concentrated","explanation":"A concentrated solution has a relatively large solute amount per volume."},
+{"type":"mcq","question":"Which statement describes a dilute solution?","options":["It contains a small amount of solute per unit volume","It contains no solvent","It always has a large concentration"],"answer":0,"explanation":"A dilute solution contains relatively little solute per unit volume."},
+{"type":"fill","question":"A solution with comparatively little solute is described as ______.","answerText":"dilute","explanation":"Dilute is the opposite of concentrated."},
+{"type":"mcq","question":"How many moles are in 0.100 dm³ of 0.1 mol dm⁻³ KCl?","options":["0.010 mol","0.100 mol","1.00 mol"],"answer":0,"explanation":"n = 0.1 × 0.100 = 0.010 mol."},
+{"type":"fill","question":"One mole of KCl produces ______ mole of K⁺ ions.","answerText":"one","explanation":"KCl contains one potassium ion per formula unit."},
+{"type":"mcq","question":"How many moles of K⁺ come from 0.010 mol K₂CO₃?","options":["0.020 mol","0.010 mol","0.030 mol"],"answer":0,"explanation":"Each K₂CO₃ unit contains two K⁺ ions."},
+{"type":"fill","question":"The formula K₂CO₃ shows that each formula unit contains ______ potassium ions.","answerText":"two","explanation":"The subscript 2 indicates two potassium ions."},
+{"type":"mcq","question":"What is the total volume after mixing 100 cm³ with 100 cm³?","options":["200 cm³","100 cm³","1000 cm³"],"answer":0,"explanation":"Assuming additive volumes, the total is 200 cm³."},
+{"type":"fill","question":"A total volume of 200 cm³ equals ______ dm³.","answerText":"0.2","explanation":"200 ÷ 1000 = 0.200 dm³."},
+{"type":"mcq","question":"What is [K⁺] when 0.030 mol is present in 0.200 dm³?","options":["0.15 mol dm⁻³","0.06 mol dm⁻³","1.5 mol dm⁻³"],"answer":0,"explanation":"c = 0.030 ÷ 0.200 = 0.15 mol dm⁻³."},
+{"type":"fill","question":"The total amount of K⁺ in the mixture example is ______ mol.","answerText":"0.03","explanation":"0.010 + 0.020 = 0.030 mol K⁺."},
+{"type":"mcq","question":"How many moles are in 25.0 cm³ of 0.010 mol dm⁻³ citric acid?","options":["2.50 × 10⁻⁴ mol","2.50 × 10⁻² mol","0.250 mol"],"answer":0,"explanation":"n = 0.010 × 0.0250 = 2.50 × 10⁻⁴ mol."},
+{"type":"fill","question":"For the citric-acid calculation, the converted volume is ______ dm³.","answerText":"0.025","explanation":"25.0 cm³ converts to 0.0250 dm³."},
+{"type":"mcq","question":"How many moles of H₃PO₄ are in 30 cm³ of a 0.1 mol dm⁻³ solution?","options":["0.003 mol","0.030 mol","0.300 mol"],"answer":0,"explanation":"30 cm³ = 0.030 dm³, so n = 0.1 × 0.030."},
+{"type":"fill","question":"One mole of H₃PO₄ reacts with ______ moles of NaOH.","answerText":"three","explanation":"The balanced reaction has a 1:3 H₃PO₄-to-NaOH ratio."},
+{"type":"mcq","question":"How many moles of NaOH react with 0.003 mol H₃PO₄?","options":["0.009 mol","0.003 mol","0.001 mol"],"answer":0,"explanation":"0.003 × 3 = 0.009 mol NaOH."},
+{"type":"fill","question":"At 0.1 mol dm⁻³, 0.009 mol NaOH occupies ______ dm³.","answerText":"0.09","explanation":"V = 0.009 ÷ 0.1 = 0.09 dm³."},
+{"type":"mcq","question":"What is 0.09 dm³ in cm³?","options":["90 cm³","9 cm³","900 cm³"],"answer":0,"explanation":"0.09 × 1000 = 90 cm³."},
+{"type":"fill","question":"The equation for amount from mass is n = m divided by ______.","answerText":"molar mass","explanation":"Amount equals mass divided by molar mass."},
+{"type":"mcq","question":"What is the molar mass of MgCl₂ using Mg = 24.3 and Cl = 35.5?","options":["95.3 g mol⁻¹","59.8 g mol⁻¹","130.8 g mol⁻¹"],"answer":0,"explanation":"24.3 + 2(35.5) = 95.3 g mol⁻¹."},
+{"type":"fill","question":"Six grams of MgCl₂ is approximately ______ mol.","answerText":"0.063","explanation":"6.00 ÷ 95.3 ≈ 0.0630 mol."},
+{"type":"mcq","question":"How many moles of chloride ions come from 0.0630 mol MgCl₂?","options":["0.126 mol","0.0630 mol","0.0315 mol"],"answer":0,"explanation":"Each mole of MgCl₂ produces two moles of Cl⁻."},
+{"type":"fill","question":"Each formula unit of MgCl₂ produces ______ chloride ions.","answerText":"two","explanation":"The subscript 2 gives two Cl⁻ ions."},
+{"type":"mcq","question":"What is the chloride-ion concentration when 0.126 mol is in 0.100 dm³?","options":["1.26 mol dm⁻³","0.126 mol dm⁻³","12.6 mol dm⁻³"],"answer":0,"explanation":"c = 0.126 ÷ 0.100 = 1.26 mol dm⁻³."},
+{"type":"fill","question":"In concentration calculations, formula subscripts determine the mole ______ between species.","answerText":"ratio","explanation":"Subscripts show how many ions arise from each formula unit."},
+{"type":"mcq","question":"What should be done before using a volume given in cm³ in n = cV?","options":["Convert it to dm³","Multiply it by the molar mass","Convert it to grams"],"answer":0,"explanation":"Volume must be in dm³ when concentration is in mol dm⁻³."},
+{"type":"fill","question":"A reliable final answer should include both a numerical value and the correct ______.","answerText":"unit","explanation":"Units are essential in chemistry calculations."}
+];
+let currentQuestion=0;
+let score=0;
+let shuffledQuestions=[];
+
+function startGame(){
+shuffledQuestions=[...questions].sort(()=>Math.random()-0.5);
+currentQuestion=0;
+score=0;
+showQuestion();
+}
+
+function showQuestion(){
+const gameArea=document.getElementById("game-area");
+const q=shuffledQuestions[currentQuestion];
+let html=`<div><p><strong>Question ${currentQuestion+1}:</strong> ${q.question}</p>`;
+
+if(q.type==="mcq"){
+q.options.forEach((opt,idx)=>{
+html+=`<label style="display:block"><input type="radio" name="opt" value="${idx}"> ${opt}</label>`;
+});
+html+=`<button class="btn" onclick="checkMCQ()">Submit</button>`;
+}else{
+html+=`<input id="fill" type="text" style="width:100%;padding:10px;margin:10px 0;">`;
+html+=`<button class="btn" onclick="checkFill()">Submit</button>`;
+}
+
+html+=`<div id="feedback"></div></div>`;
+gameArea.innerHTML=html;
+}
+
+function checkMCQ(){
+const q=shuffledQuestions[currentQuestion];
+const sel=document.querySelector('input[name="opt"]:checked');
+if(!sel)return;
+
+const feedback=document.getElementById("feedback");
+
+if(parseInt(sel.value)===q.answer){
+feedback.innerHTML=`<p class="correct">Correct! ${q.explanation}</p>`;
+score++;
+}else{
+feedback.innerHTML=`<p class="incorrect">Incorrect. ${q.explanation}</p>`;
+}
+
+setTimeout(nextQuestion,1200);
+}
+
+function checkFill(){
+const q=shuffledQuestions[currentQuestion];
+const ans=document.getElementById("fill").value.trim().toLowerCase();
+const feedback=document.getElementById("feedback");
+
+if(ans.includes(q.answerText)){
+feedback.innerHTML=`<p class="correct">Correct! ${q.explanation}</p>`;
+score++;
+}else{
+feedback.innerHTML=`<p class="incorrect">Incorrect. ${q.explanation}</p>`;
+}
+
+setTimeout(nextQuestion,1200);
+}
+
+function nextQuestion(){
+currentQuestion++;
+if(currentQuestion<shuffledQuestions.length){
+showQuestion();
+}else{
+document.getElementById("game-area").innerHTML=`<h3>Quiz Complete!</h3><p>Your score: ${score}/${shuffledQuestions.length}</p><button class="btn" onclick="startGame()">Try Again</button>`;
+}
+}
+</script>
+
+</body>
+</html>
