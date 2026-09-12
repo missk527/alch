@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Titrations and Standard Solutions</title>
+<style>
+:root{
+--brand:#0ea5e9;
+--ink:#1f2937;
+--paper:#fafafa;
+--card:#ffffff;
+--muted:#6b7280;
+--good:#16a34a;
+--bad:#dc2626;
+}
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+color:var(--ink);
+background:var(--paper);
+line-height:1.6;
+}
+header{
+background:linear-gradient(135deg,var(--brand),#6366f1);
+color:white;
+padding:20px 16px;
+text-align:center;
+}
+.wrap{max-width:1000px;margin:0 auto;padding:16px}
+.card{
+background:var(--card);
+border-radius:12px;
+padding:18px;
+box-shadow:0 6px 18px rgba(2,6,23,.08);
+margin:16px 0;
+}
+iframe{
+width:100%;
+max-width:900px;
+height:480px;
+border:0;
+border-radius:12px;
+}
+details{
+border:1px solid #e5e7eb;
+border-radius:10px;
+padding:10px 12px;
+margin:10px 0;
+background:#fff;
+}
+summary{
+font-weight:700;
+color:#0f766e;
+cursor:pointer;
+}
+.btn{
+background:var(--brand);
+color:white;
+border:0;
+border-radius:10px;
+padding:10px 14px;
+font-weight:700;
+cursor:pointer;
+}
+.correct{color:green}
+.incorrect{color:red}
+</style>
+</head>
+<body>
+
+<header>
+<h1>ALC9. Titrations and Standard Solutions</h1>
+</header>
+
+<div class="wrap">
+
+<div class="card">
+<iframe src="https://www.youtube.com/embed/b1lfMuVo3aA?si=a8CpXAL3WxBsT5zC" allowfullscreen></iframe>
+</div>
+
+<section class="card">
+<h2>Key Notes (Synced with Video)</h2>
+
+
+<details open><summary>Purpose of Titration</summary><ul>
+<li>Titration is a form of volumetric analysis involving accurately measured solution volumes.</li>
+<li>A known concentration is used to determine unknowns such as concentration, molar mass, formula, or water of crystallization.</li>
+<li>A standard solution has an accurately known concentration.</li></ul></details>
+<details><summary>The Titration Process</summary><ul>
+<li>Use a pipette to transfer an accurate volume of solution X into a conical flask.</li>
+<li>Add a suitable indicator, fill a burette with solution Y, and record the reading.</li>
+<li>Add Y while swirling; near the end point, add it drop by drop.</li>
+<li>Use the burette readings to determine the volume delivered at the end point.</li></ul></details>
+<details><summary>Preparing a Standard Solution</summary><ul>
+<li>Accurately weigh the solute, dissolve it in a beaker, and transfer it to a volumetric flask.</li>
+<li>Rinse the beaker into the flask so that all solute is transferred quantitatively.</li>
+<li>Add solvent to near the mark, then use a dropper until the bottom of the meniscus reaches the line.</li>
+<li>Stopper and invert the flask several times to mix thoroughly. If the mark is exceeded, start again.</li></ul></details>
+<details><summary>Equations and Units</summary><ul>
+<li>Use n = cV, with concentration in mol dm⁻³ and volume in dm³.</li>
+<li>Convert cm³ to dm³ by dividing by 1000.</li>
+<li>Use m = nM and M = m/n for mass and molar-mass calculations.</li>
+<li>Always use the balanced equation to apply the correct reacting mole ratio.</li></ul></details>
+<details><summary>NaOH Standard Solution Example</summary><ul>
+<li>250 cm³ equals 0.250 dm³, so 0.100 mol dm⁻³ NaOH requires 0.0250 mol.</li>
+<li>The molar mass of NaOH is 40.0 g mol⁻¹.</li>
+<li>The required mass is 0.0250 × 40.0 = 1.00 g.</li></ul></details>
+<details><summary>Unknown Concentration Example</summary><ul>
+<li>HCl + NaOH → NaCl + H₂O gives a 1:1 mole ratio.</li>
+<li>25.0 cm³ of 0.100 mol dm⁻³ NaOH contains 0.00250 mol.</li>
+<li>Therefore 22.5 cm³ of HCl contains 0.00250 mol, giving 0.111 mol dm⁻³.</li></ul></details>
+<details><summary>Unknown Molar Mass Example</summary><ul>
+<li>HX and NaOH react 1:1; 22.5 cm³ of 0.100 mol dm⁻³ NaOH is 0.00225 mol.</li>
+<li>A 25.0 cm³ HX aliquot therefore contains 0.00225 mol, while 250 cm³ contains 0.0225 mol.</li>
+<li>For a 1.50 g sample, M = 1.50 ÷ 0.0225 = 66.7 g mol⁻¹.</li></ul></details>
+<details><summary>Further Examples and Exam Technique</summary><ul>
+<li>For 1.00 dm³ of 0.100 mol dm⁻³ Mg(OH)₂, 5.83 g is required because M = 58.3 g mol⁻¹.</li>
+<li>H₂SO₄ + 2NaOH → Na₂SO₄ + 2H₂O gives a 1:2 acid-to-base ratio.</li>
+<li>Ba(OH)₂ + 2HNO₃ → Ba(NO₃)₂ + 2H₂O gives a 1:2 base-to-acid ratio.</li>
+<li>Use a weighing boat and volumetric flask; measure titration volumes with a pipette and burette; include units in every final answer.</li></ul></details>
+
+</section>
+
+<section class="card">
+<h2>Quiz (40 Questions)</h2>
+<div id="game-area">
+<button class="btn" onclick="startGame()">Start Quiz</button>
+</div>
+</section>
+
+</div>
+
+<script>
+const questions=[
+  {
+    "type": "mcq",
+    "question": "What type of analysis is titration?",
+    "options": [
+      "Volumetric analysis",
+      "Gravimetric analysis",
+      "Chromatography"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer: Volumetric analysis."
+  },
+  {
+    "type": "mcq",
+    "question": "What is a standard solution?",
+    "options": [
+      "A solution of accurately known concentration",
+      "A solution of unknown volume",
+      "A saturated solution only"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer: A solution of accurately known concentration."
+  },
+  {
+    "type": "mcq",
+    "question": "Which unknown can titration determine?",
+    "options": [
+      "Concentration",
+      "Atomic number",
+      "Speed of light"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer: Concentration."
+  },
+  {
+    "type": "mcq",
+    "question": "Which apparatus transfers a fixed accurate volume?",
+    "options": [
+      "Pipette",
+      "Beaker",
+      "Test tube"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer: Pipette."
+  },
+  {
+    "type": "mcq",
+    "question": "Which apparatus delivers a measured variable volume?",
+    "options": [
+      "Burette",
+      "Watch glass",
+      "Evaporating basin"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer: Burette."
+  },
+  {
+    "type": "mcq",
+    "question": "Why is an indicator added?",
+    "options": [
+      "To show the end point",
+      "To increase concentration",
+      "To measure mass"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer: To show the end point."
+  },
+  {
+    "type": "mcq",
+    "question": "How should titrant be added near the end point?",
+    "options": [
+      "Drop by drop",
+      "All at once",
+      "After boiling"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer: Drop by drop."
+  },
+  {
+    "type": "mcq",
+    "question": "What should be done to the flask during titration?",
+    "options": [
+      "Swirl it",
+      "Freeze it",
+      "Leave it untouched"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer: Swirl it."
+  },
+  {
+    "type": "mcq",
+    "question": "What is a solute?",
+    "options": [
+      "The substance dissolved",
+      "The graduation line",
+      "The end point"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer: The substance dissolved."
+  },
+  {
+    "type": "mcq",
+    "question": "What does concentration describe?",
+    "options": [
+      "Solute amount per solution volume",
+      "Temperature only",
+      "Mass of solvent only"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer: Solute amount per solution volume."
+  },
+  {
+    "type": "mcq",
+    "question": "Which flask prepares an accurate fixed volume?",
+    "options": [
+      "Volumetric flask",
+      "Conical flask",
+      "Round-bottom flask"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer: Volumetric flask."
+  },
+  {
+    "type": "mcq",
+    "question": "Why are beaker washings added to the flask?",
+    "options": [
+      "To transfer all solute",
+      "To exceed the mark",
+      "To change colour"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer: To transfer all solute."
+  },
+  {
+    "type": "mcq",
+    "question": "Which part of the meniscus is placed on the mark?",
+    "options": [
+      "The bottom",
+      "The top",
+      "Either edge"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer: The bottom."
+  },
+  {
+    "type": "mcq",
+    "question": "What should be done after filling above the mark?",
+    "options": [
+      "Start again",
+      "Remove some solution",
+      "Ignore it"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer: Start again."
+  },
+  {
+    "type": "mcq",
+    "question": "How is a standard solution mixed?",
+    "options": [
+      "Stopper and invert repeatedly",
+      "Stir only at the surface",
+      "Heat uncovered"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer: Stopper and invert repeatedly."
+  },
+  {
+    "type": "mcq",
+    "question": "Which equation gives amount in moles?",
+    "options": [
+      "n = cV",
+      "n = c/V",
+      "n = mM"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer: n = cV."
+  },
+  {
+    "type": "mcq",
+    "question": "How are cm³ converted to dm³?",
+    "options": [
+      "Divide by 1000",
+      "Multiply by 1000",
+      "Divide by 10"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer: Divide by 1000."
+  },
+  {
+    "type": "mcq",
+    "question": "What is 250 cm³ in dm³?",
+    "options": [
+      "0.250 dm³",
+      "2.50 dm³",
+      "0.0250 dm³"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer: 0.250 dm³."
+  },
+  {
+    "type": "mcq",
+    "question": "How many moles are in 0.250 dm³ at 0.100 mol dm⁻³?",
+    "options": [
+      "0.0250 mol",
+      "0.250 mol",
+      "0.00250 mol"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer: 0.0250 mol."
+  },
+  {
+    "type": "mcq",
+    "question": "What is the molar mass of NaOH?",
+    "options": [
+      "40.0 g mol⁻¹",
+      "56.0 g mol⁻¹",
+      "23.0 g mol⁻¹"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer: 40.0 g mol⁻¹."
+  },
+  {
+    "type": "mcq",
+    "question": "What NaOH mass makes 250 cm³ at 0.100 mol dm⁻³?",
+    "options": [
+      "1.00 g",
+      "10.0 g",
+      "0.100 g"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer: 1.00 g."
+  },
+  {
+    "type": "mcq",
+    "question": "What is the balanced HCl–NaOH equation?",
+    "options": [
+      "HCl + NaOH → NaCl + H₂O",
+      "2HCl + NaOH → NaCl + 2H₂O",
+      "HCl + NaOH → NaH + ClO"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer: HCl + NaOH → NaCl + H₂O."
+  },
+  {
+    "type": "mcq",
+    "question": "How many moles are in 25.0 cm³ of 0.100 mol dm⁻³ NaOH?",
+    "options": [
+      "0.00250 mol",
+      "0.0250 mol",
+      "0.250 mol"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer: 0.00250 mol."
+  },
+  {
+    "type": "mcq",
+    "question": "What is the HCl:NaOH mole ratio?",
+    "options": [
+      "1:1",
+      "1:2",
+      "2:1"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer: 1:1."
+  },
+  {
+    "type": "mcq",
+    "question": "What is the concentration of 0.00250 mol HCl in 22.5 cm³?",
+    "options": [
+      "0.111 mol dm⁻³",
+      "0.0111 mol dm⁻³",
+      "1.11 mol dm⁻³"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer: 0.111 mol dm⁻³."
+  },
+  {
+    "type": "mcq",
+    "question": "What is the HX:NaOH ratio in HX + NaOH?",
+    "options": [
+      "1:1",
+      "2:1",
+      "1:3"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer: 1:1."
+  },
+  {
+    "type": "mcq",
+    "question": "How many moles are in 22.5 cm³ of 0.100 mol dm⁻³ NaOH?",
+    "options": [
+      "0.00225 mol",
+      "0.0225 mol",
+      "0.225 mol"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer: 0.00225 mol."
+  },
+  {
+    "type": "mcq",
+    "question": "If 25.0 cm³ contains 0.00225 mol, how much is in 250 cm³?",
+    "options": [
+      "0.0225 mol",
+      "0.00225 mol",
+      "0.225 mol"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer: 0.0225 mol."
+  },
+  {
+    "type": "mcq",
+    "question": "What is the molar mass of 1.50 g containing 0.0225 mol?",
+    "options": [
+      "66.7 g mol⁻¹",
+      "33.3 g mol⁻¹",
+      "0.0338 g mol⁻¹"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer: 66.7 g mol⁻¹."
+  },
+  {
+    "type": "mcq",
+    "question": "Why use a weighing boat?",
+    "options": [
+      "To prevent loss and contamination",
+      "To measure volume",
+      "To heat the solid"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer: To prevent loss and contamination."
+  },
+  {
+    "type": "mcq",
+    "question": "Why use a volumetric rather than conical flask?",
+    "options": [
+      "It gives an accurate final volume",
+      "It measures mass",
+      "It changes the reaction"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer: It gives an accurate final volume."
+  },
+  {
+    "type": "mcq",
+    "question": "What is the molar mass of Mg(OH)₂?",
+    "options": [
+      "58.3 g mol⁻¹",
+      "41.3 g mol⁻¹",
+      "74.3 g mol⁻¹"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer: 58.3 g mol⁻¹."
+  },
+  {
+    "type": "mcq",
+    "question": "What mass makes 1.00 dm³ of 0.100 mol dm⁻³ Mg(OH)₂?",
+    "options": [
+      "5.83 g",
+      "58.3 g",
+      "0.583 g"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer: 5.83 g."
+  },
+  {
+    "type": "mcq",
+    "question": "What is the NaOH:H₂SO₄ mole ratio?",
+    "options": [
+      "2:1",
+      "1:1",
+      "1:2"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer: 2:1."
+  },
+  {
+    "type": "mcq",
+    "question": "How much is in 25.0 cm³ of 0.0440 mol dm⁻³ NaOH?",
+    "options": [
+      "0.00110 mol",
+      "0.0110 mol",
+      "0.000110 mol"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer: 0.00110 mol."
+  },
+  {
+    "type": "mcq",
+    "question": "How much H₂SO₄ reacts with 0.00110 mol NaOH?",
+    "options": [
+      "0.000550 mol",
+      "0.00110 mol",
+      "0.00220 mol"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer: 0.000550 mol."
+  },
+  {
+    "type": "mcq",
+    "question": "What is 0.000550 mol H₂SO₄ in 17.5 cm³?",
+    "options": [
+      "0.0314 mol dm⁻³",
+      "0.314 mol dm⁻³",
+      "0.00314 mol dm⁻³"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer: 0.0314 mol dm⁻³."
+  },
+  {
+    "type": "mcq",
+    "question": "What is the balanced barium hydroxide–nitric acid equation?",
+    "options": [
+      "Ba(OH)₂ + 2HNO₃ → Ba(NO₃)₂ + 2H₂O",
+      "Ba(OH)₂ + HNO₃ → BaNO₃ + H₂O",
+      "2Ba(OH)₂ + HNO₃ → Ba₂NO₃ + 2H₂O"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer: Ba(OH)₂ + 2HNO₃ → Ba(NO₃)₂ + 2H₂O."
+  },
+  {
+    "type": "mcq",
+    "question": "How much Ba(OH)₂ is in 50.0 cm³ at 0.500 mol dm⁻³?",
+    "options": [
+      "0.0250 mol",
+      "0.250 mol",
+      "0.00250 mol"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer: 0.0250 mol."
+  },
+  {
+    "type": "mcq",
+    "question": "If 0.0250 mol Ba(OH)₂ neutralizes 100 cm³ HNO₃, what is the acid concentration?",
+    "options": [
+      "0.500 mol dm⁻³",
+      "0.250 mol dm⁻³",
+      "0.0500 mol dm⁻³"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer: 0.500 mol dm⁻³."
+  }
+];
+
+let currentQuestion=0;
+let score=0;
+let shuffledQuestions=[];
+
+function startGame(){
+shuffledQuestions=[...questions].sort(()=>Math.random()-0.5);
+currentQuestion=0;
+score=0;
+showQuestion();
+}
+
+function showQuestion(){
+const gameArea=document.getElementById("game-area");
+const q=shuffledQuestions[currentQuestion];
+let html=`<div><p><strong>Question ${currentQuestion+1}:</strong> ${q.question}</p>`;
+
+if(q.type==="mcq"){
+q.options.forEach((opt,idx)=>{
+html+=`<label style="display:block"><input type="radio" name="opt" value="${idx}"> ${opt}</label>`;
+});
+html+=`<button class="btn" onclick="checkMCQ()">Submit</button>`;
+}else{
+html+=`<input id="fill" type="text" style="width:100%;padding:10px;margin:10px 0;">`;
+html+=`<button class="btn" onclick="checkFill()">Submit</button>`;
+}
+
+html+=`<div id="feedback"></div></div>`;
+gameArea.innerHTML=html;
+}
+
+function checkMCQ(){
+const q=shuffledQuestions[currentQuestion];
+const sel=document.querySelector('input[name="opt"]:checked');
+if(!sel)return;
+
+const feedback=document.getElementById("feedback");
+
+if(parseInt(sel.value)===q.answer){
+feedback.innerHTML=`<p class="correct">Correct! ${q.explanation}</p>`;
+score++;
+}else{
+feedback.innerHTML=`<p class="incorrect">Incorrect. ${q.explanation}</p>`;
+}
+
+setTimeout(nextQuestion,1200);
+}
+
+function checkFill(){
+const q=shuffledQuestions[currentQuestion];
+const ans=document.getElementById("fill").value.trim().toLowerCase();
+const feedback=document.getElementById("feedback");
+
+if(ans.includes(q.answerText)){
+feedback.innerHTML=`<p class="correct">Correct! ${q.explanation}</p>`;
+score++;
+}else{
+feedback.innerHTML=`<p class="incorrect">Incorrect. ${q.explanation}</p>`;
+}
+
+setTimeout(nextQuestion,1200);
+}
+
+function nextQuestion(){
+currentQuestion++;
+if(currentQuestion<shuffledQuestions.length){
+showQuestion();
+}else{
+document.getElementById("game-area").innerHTML=`<h3>Quiz Complete!</h3><p>Your score: ${score}/${shuffledQuestions.length}</p><button class="btn" onclick="startGame()">Try Again</button>`;
+}
+}
+</script>
+
+</body>
+</html>
