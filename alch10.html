@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coherence and Interference</title>
+<style>
+:root{
+--brand:#0ea5e9;
+--ink:#1f2937;
+--paper:#fafafa;
+--card:#ffffff;
+--muted:#6b7280;
+--good:#16a34a;
+--bad:#dc2626;
+}
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+color:var(--ink);
+background:var(--paper);
+line-height:1.6;
+}
+header{
+background:linear-gradient(135deg,var(--brand),#6366f1);
+color:white;
+padding:20px 16px;
+text-align:center;
+}
+.wrap{max-width:1000px;margin:0 auto;padding:16px}
+.card{
+background:var(--card);
+border-radius:12px;
+padding:18px;
+box-shadow:0 6px 18px rgba(2,6,23,.08);
+margin:16px 0;
+}
+iframe{
+width:100%;
+max-width:900px;
+height:480px;
+border:0;
+border-radius:12px;
+}
+details{
+border:1px solid #e5e7eb;
+border-radius:10px;
+padding:10px 12px;
+margin:10px 0;
+background:#fff;
+}
+summary{
+font-weight:700;
+color:#0f766e;
+cursor:pointer;
+}
+.btn{
+background:var(--brand);
+color:white;
+border:0;
+border-radius:10px;
+padding:10px 14px;
+font-weight:700;
+cursor:pointer;
+}
+.correct{color:green}
+.incorrect{color:red}
+</style>
+</head>
+<body>
+
+<header>
+<h1>ALCH10. Oxidation and Reduction</h1>
+</header>
+
+<div class="wrap">
+
+<div class="card">
+<iframe src="https://www.youtube.com/embed/9v5Y3h8Jm0I?si=PRQtyChouQhTxiSe" allowfullscreen></iframe>
+</div>
+
+<section class="card">
+<h2>Key Notes (Synced with Video)</h2>
+<details open>
+<summary>Electron Transfer and Redox</summary>
+<ul>
+<li>Oxidation is loss of electrons; reduction is gain of electrons. Remember OIL RIG: Oxidation Is Loss, Reduction Is Gain.</li>
+<li>A redox reaction involves oxidation and reduction together: electrons lost by one species are gained by another.</li>
+<li>An oxidizing agent accepts electrons and is reduced; a reducing agent donates electrons and is oxidized.</li>
+</ul>
+</details>
+<details>
+<summary>Oxidation Numbers</summary>
+<ul>
+<li>An oxidation number tracks the formal charge assigned to an atom. An uncombined element has oxidation number 0; a simple ion has the same oxidation number as its charge.</li>
+<li>In these examples, hydrogen in compounds is usually +1 and oxygen is usually −2; oxygen in hydrogen peroxide is −1.</li>
+<li>Oxidation increases oxidation number; reduction decreases oxidation number. The sum of oxidation numbers is 0 for a neutral compound.</li>
+</ul>
+</details>
+<details>
+<summary>Nitrogen, Hydrogen and Ammonia</summary>
+<ul>
+<li>In N₂ and H₂, both elements have oxidation number 0.</li>
+<li>In NH₃, hydrogen is +1, so nitrogen is −3 because x + 3(+1) = 0.</li>
+<li>Nitrogen changes from 0 to −3 and is reduced; hydrogen changes from 0 to +1 and is oxidized.</li>
+</ul>
+</details>
+<details>
+<summary>Metals Reacting with Acids</summary>
+<ul>
+<li>A reactive metal is oxidized while hydrogen ions from the acid are reduced to hydrogen gas.</li>
+<li>For sodium reacting with hydrochloric acid, sodium changes from 0 to +1 and hydrogen changes from +1 to 0.</li>
+<li>For magnesium reacting with sulfuric acid, magnesium changes from 0 to +2 and hydrogen changes from +1 to 0. Both are redox reactions.</li>
+</ul>
+</details>
+<details>
+<summary>Disproportionation</summary>
+<ul>
+<li>In a disproportionation reaction, the same element is both oxidized and reduced.</li>
+<li>During hydrogen peroxide decomposition, oxygen starts at −1 in H₂O₂. Some oxygen becomes 0 in O₂ and is oxidized; some becomes −2 in H₂O and is reduced.</li>
+<li>The balanced equation is 2H₂O₂ → 2H₂O + O₂.</li>
+</ul>
+</details>
+<details>
+<summary>Worked Oxidation Number Examples</summary>
+<ul>
+<li>For Zn + CaCO₃ → ZnO + CaO + CO, zinc changes from 0 to +2 and is oxidized; carbon changes from +4 in CaCO₃ to +2 in CO and is reduced. Calcium stays +2.</li>
+<li>For 2NH₃ + NaClO → N₂H₄ + NaCl + H₂O, nitrogen changes from −3 in NH₃ to −2 in N₂H₄ and is oxidized; chlorine changes from +1 in NaClO to −1 in NaCl and is reduced.</li>
+<li>In hydrazine, hydrogen is +1; using 2x + 4(+1) = 0 gives nitrogen an oxidation number of −2.</li>
+</ul>
+</details>
+</section>
+
+<section class="card">
+<h2>Quiz (40 Questions)</h2>
+<div id="game-area">
+<button class="btn" onclick="startGame()">Start Quiz</button>
+</div>
+</section>
+
+</div>
+
+<script>
+const questions=[
+  {
+    "type": "mcq",
+    "question": "What is oxidation in terms of electrons?",
+    "options": [
+      "Loss of electrons.",
+      "Gain of electrons.",
+      "Oxidation and reduction occur together."
+    ],
+    "answer": 0,
+    "explanation": "Loss of electrons."
+  },
+  {
+    "type": "mcq",
+    "question": "What is reduction in terms of electrons?",
+    "options": [
+      "Oxidation Is Loss, Reduction Is Gain.",
+      "Electrons.",
+      "Gain of electrons."
+    ],
+    "answer": 2,
+    "explanation": "Gain of electrons."
+  },
+  {
+    "type": "mcq",
+    "question": "What does OIL RIG stand for?",
+    "options": [
+      "It is oxidized.",
+      "Oxidation Is Loss, Reduction Is Gain.",
+      "Oxidation and reduction occur together."
+    ],
+    "answer": 1,
+    "explanation": "Oxidation Is Loss, Reduction Is Gain."
+  },
+  {
+    "type": "mcq",
+    "question": "What happens in a redox reaction?",
+    "options": [
+      "Oxidation and reduction occur together.",
+      "Electrons.",
+      "It is reduced."
+    ],
+    "answer": 0,
+    "explanation": "Oxidation and reduction occur together."
+  },
+  {
+    "type": "mcq",
+    "question": "What is transferred between species in an electron-transfer redox reaction?",
+    "options": [
+      "It is oxidized.",
+      "It increases.",
+      "Electrons."
+    ],
+    "answer": 2,
+    "explanation": "Electrons."
+  },
+  {
+    "type": "mcq",
+    "question": "If species A loses electrons, what happens to A?",
+    "options": [
+      "Loss of electrons.",
+      "It is oxidized.",
+      "It is reduced."
+    ],
+    "answer": 1,
+    "explanation": "It is oxidized."
+  },
+  {
+    "type": "mcq",
+    "question": "If species B gains electrons, what happens to B?",
+    "options": [
+      "It is reduced.",
+      "It increases.",
+      "Gain of electrons."
+    ],
+    "answer": 0,
+    "explanation": "It is reduced."
+  },
+  {
+    "type": "mcq",
+    "question": "What happens to oxidation number during oxidation?",
+    "options": [
+      "Loss of electrons.",
+      "Oxidation Is Loss, Reduction Is Gain.",
+      "It increases."
+    ],
+    "answer": 2,
+    "explanation": "It increases."
+  },
+  {
+    "type": "mcq",
+    "question": "What happens to oxidation number during reduction?",
+    "options": [
+      "Minus two.",
+      "It decreases.",
+      "Zero."
+    ],
+    "answer": 1,
+    "explanation": "It decreases."
+  },
+  {
+    "type": "mcq",
+    "question": "What is the oxidation number of an uncombined element?",
+    "options": [
+      "Zero.",
+      "Its ionic charge.",
+      "Plus one."
+    ],
+    "answer": 0,
+    "explanation": "Zero."
+  },
+  {
+    "type": "mcq",
+    "question": "What is the oxidation number of a simple ion?",
+    "options": [
+      "Zero.",
+      "Minus two.",
+      "Its ionic charge."
+    ],
+    "answer": 2,
+    "explanation": "Its ionic charge."
+  },
+  {
+    "type": "mcq",
+    "question": "What is the sum of oxidation numbers in a neutral compound?",
+    "options": [
+      "It decreases.",
+      "Zero.",
+      "Plus one."
+    ],
+    "answer": 1,
+    "explanation": "Zero."
+  },
+  {
+    "type": "mcq",
+    "question": "What is hydrogen’s usual oxidation number in these compounds?",
+    "options": [
+      "Plus one.",
+      "Minus two.",
+      "Zero."
+    ],
+    "answer": 0,
+    "explanation": "Plus one."
+  },
+  {
+    "type": "mcq",
+    "question": "What is oxygen’s usual oxidation number in these compounds?",
+    "options": [
+      "Zero.",
+      "It decreases.",
+      "Minus two."
+    ],
+    "answer": 2,
+    "explanation": "Minus two."
+  },
+  {
+    "type": "mcq",
+    "question": "What is nitrogen’s oxidation number in N₂?",
+    "options": [
+      "No change.",
+      "Zero.",
+      "Minus two."
+    ],
+    "answer": 1,
+    "explanation": "Zero."
+  },
+  {
+    "type": "mcq",
+    "question": "What is hydrogen’s oxidation number in H₂?",
+    "options": [
+      "Zero.",
+      "It decreases.",
+      "Its ionic charge."
+    ],
+    "answer": 0,
+    "explanation": "Zero."
+  },
+  {
+    "type": "mcq",
+    "question": "What is nitrogen’s oxidation number in NH₃?",
+    "options": [
+      "Nitrogen.",
+      "The metal is oxidized.",
+      "Minus three."
+    ],
+    "answer": 2,
+    "explanation": "Minus three."
+  },
+  {
+    "type": "mcq",
+    "question": "Which element is reduced when N₂ and H₂ form NH₃?",
+    "options": [
+      "Hydrogen gas.",
+      "Nitrogen.",
+      "Hydrogen."
+    ],
+    "answer": 1,
+    "explanation": "Nitrogen."
+  },
+  {
+    "type": "mcq",
+    "question": "Which element is oxidized when N₂ and H₂ form NH₃?",
+    "options": [
+      "Hydrogen.",
+      "The metal is oxidized.",
+      "From zero to plus one."
+    ],
+    "answer": 0,
+    "explanation": "Hydrogen."
+  },
+  {
+    "type": "mcq",
+    "question": "What happens to a reactive metal when it reacts with an acid?",
+    "options": [
+      "Hydrogen gas.",
+      "From plus one to zero.",
+      "The metal is oxidized."
+    ],
+    "answer": 2,
+    "explanation": "The metal is oxidized."
+  },
+  {
+    "type": "mcq",
+    "question": "What is formed when hydrogen ions are reduced in a metal–acid reaction?",
+    "options": [
+      "It oxidizes that species.",
+      "Hydrogen gas.",
+      "From zero to plus one."
+    ],
+    "answer": 1,
+    "explanation": "Hydrogen gas."
+  },
+  {
+    "type": "mcq",
+    "question": "How does sodium’s oxidation number change when it forms NaCl?",
+    "options": [
+      "From zero to plus one.",
+      "From plus one to zero.",
+      "Minus three."
+    ],
+    "answer": 0,
+    "explanation": "From zero to plus one."
+  },
+  {
+    "type": "mcq",
+    "question": "How does hydrogen’s oxidation number change when acid forms H₂?",
+    "options": [
+      "It oxidizes that species.",
+      "Nitrogen.",
+      "From plus one to zero."
+    ],
+    "answer": 2,
+    "explanation": "From plus one to zero."
+  },
+  {
+    "type": "mcq",
+    "question": "What does an oxidizing agent do to another species?",
+    "options": [
+      "Hydrogen.",
+      "It oxidizes that species.",
+      "Minus three."
+    ],
+    "answer": 1,
+    "explanation": "It oxidizes that species."
+  },
+  {
+    "type": "mcq",
+    "question": "What happens to an oxidizing agent itself?",
+    "options": [
+      "It is reduced.",
+      "It reduces that species.",
+      "The same element is both oxidized and reduced."
+    ],
+    "answer": 0,
+    "explanation": "It is reduced."
+  },
+  {
+    "type": "mcq",
+    "question": "What does a reducing agent do to another species?",
+    "options": [
+      "It is oxidized.",
+      "Minus one.",
+      "It reduces that species."
+    ],
+    "answer": 2,
+    "explanation": "It reduces that species."
+  },
+  {
+    "type": "mcq",
+    "question": "What happens to a reducing agent itself?",
+    "options": [
+      "Zero.",
+      "It is oxidized.",
+      "The same element is both oxidized and reduced."
+    ],
+    "answer": 1,
+    "explanation": "It is oxidized."
+  },
+  {
+    "type": "mcq",
+    "question": "What is a disproportionation reaction?",
+    "options": [
+      "The same element is both oxidized and reduced.",
+      "Minus one.",
+      "Minus two."
+    ],
+    "answer": 0,
+    "explanation": "The same element is both oxidized and reduced."
+  },
+  {
+    "type": "mcq",
+    "question": "What is oxygen’s oxidation number in H₂O₂?",
+    "options": [
+      "Zero.",
+      "Oxygen is both oxidized and reduced.",
+      "Minus one."
+    ],
+    "answer": 2,
+    "explanation": "Minus one."
+  },
+  {
+    "type": "mcq",
+    "question": "What is oxygen’s oxidation number in O₂?",
+    "options": [
+      "It is reduced.",
+      "Zero.",
+      "Minus two."
+    ],
+    "answer": 1,
+    "explanation": "Zero."
+  },
+  {
+    "type": "mcq",
+    "question": "What is oxygen’s oxidation number in H₂O?",
+    "options": [
+      "Minus two.",
+      "Oxygen is both oxidized and reduced.",
+      "It reduces that species."
+    ],
+    "answer": 0,
+    "explanation": "Minus two."
+  },
+  {
+    "type": "mcq",
+    "question": "Why is decomposition of H₂O₂ disproportionation?",
+    "options": [
+      "It is reduced.",
+      "It is oxidized.",
+      "Oxygen is both oxidized and reduced."
+    ],
+    "answer": 2,
+    "explanation": "Oxygen is both oxidized and reduced."
+  },
+  {
+    "type": "mcq",
+    "question": "How does magnesium’s oxidation number change when it forms MgSO₄?",
+    "options": [
+      "Minus two.",
+      "From zero to plus two.",
+      "Plus two."
+    ],
+    "answer": 1,
+    "explanation": "From zero to plus two."
+  },
+  {
+    "type": "mcq",
+    "question": "How does zinc’s oxidation number change when it forms ZnO?",
+    "options": [
+      "From zero to plus two.",
+      "Plus four.",
+      "Carbon."
+    ],
+    "answer": 0,
+    "explanation": "From zero to plus two."
+  },
+  {
+    "type": "mcq",
+    "question": "What is carbon’s oxidation number in CaCO₃?",
+    "options": [
+      "Plus two.",
+      "Minus two.",
+      "Plus four."
+    ],
+    "answer": 2,
+    "explanation": "Plus four."
+  },
+  {
+    "type": "mcq",
+    "question": "What is carbon’s oxidation number in CO?",
+    "options": [
+      "From plus one to minus one.",
+      "Plus two.",
+      "Carbon."
+    ],
+    "answer": 1,
+    "explanation": "Plus two."
+  },
+  {
+    "type": "mcq",
+    "question": "Which element is reduced in Zn + CaCO₃ → ZnO + CaO + CO?",
+    "options": [
+      "Carbon.",
+      "Minus two.",
+      "Nitrogen."
+    ],
+    "answer": 0,
+    "explanation": "Carbon."
+  },
+  {
+    "type": "mcq",
+    "question": "What is nitrogen’s oxidation number in N₂H₄?",
+    "options": [
+      "From plus one to minus one.",
+      "From zero to plus two.",
+      "Minus two."
+    ],
+    "answer": 2,
+    "explanation": "Minus two."
+  },
+  {
+    "type": "mcq",
+    "question": "How does chlorine’s oxidation number change from NaClO to NaCl?",
+    "options": [
+      "From zero to plus two.",
+      "From plus one to minus one.",
+      "Nitrogen."
+    ],
+    "answer": 1,
+    "explanation": "From plus one to minus one."
+  },
+  {
+    "type": "mcq",
+    "question": "Which element is oxidized in 2NH₃ + NaClO → N₂H₄ + NaCl + H₂O?",
+    "options": [
+      "Nitrogen.",
+      "From zero to plus two.",
+      "Plus four."
+    ],
+    "answer": 0,
+    "explanation": "Nitrogen."
+  }
+];
+
+let currentQuestion=0;
+let score=0;
+let shuffledQuestions=[];
+
+function startGame(){
+shuffledQuestions=[...questions].sort(()=>Math.random()-0.5);
+currentQuestion=0;
+score=0;
+showQuestion();
+}
+
+function showQuestion(){
+const gameArea=document.getElementById("game-area");
+const q=shuffledQuestions[currentQuestion];
+let html=`<div><p><strong>Question ${currentQuestion+1}:</strong> ${q.question}</p>`;
+
+if(q.type==="mcq"){
+q.options.forEach((opt,idx)=>{
+html+=`<label style="display:block"><input type="radio" name="opt" value="${idx}"> ${opt}</label>`;
+});
+html+=`<button class="btn" onclick="checkMCQ()">Submit</button>`;
+}else{
+html+=`<input id="fill" type="text" style="width:100%;padding:10px;margin:10px 0;">`;
+html+=`<button class="btn" onclick="checkFill()">Submit</button>`;
+}
+
+html+=`<div id="feedback"></div></div>`;
+gameArea.innerHTML=html;
+}
+
+function checkMCQ(){
+const q=shuffledQuestions[currentQuestion];
+const sel=document.querySelector('input[name="opt"]:checked');
+if(!sel)return;
+
+const feedback=document.getElementById("feedback");
+
+if(parseInt(sel.value)===q.answer){
+feedback.innerHTML=`<p class="correct">Correct! ${q.explanation}</p>`;
+score++;
+}else{
+feedback.innerHTML=`<p class="incorrect">Incorrect. ${q.explanation}</p>`;
+}
+
+setTimeout(nextQuestion,1200);
+}
+
+function checkFill(){
+const q=shuffledQuestions[currentQuestion];
+const ans=document.getElementById("fill").value.trim().toLowerCase();
+const feedback=document.getElementById("feedback");
+
+if(ans.includes(q.answerText)){
+feedback.innerHTML=`<p class="correct">Correct! ${q.explanation}</p>`;
+score++;
+}else{
+feedback.innerHTML=`<p class="incorrect">Incorrect. ${q.explanation}</p>`;
+}
+
+setTimeout(nextQuestion,1200);
+}
+
+function nextQuestion(){
+currentQuestion++;
+if(currentQuestion<shuffledQuestions.length){
+showQuestion();
+}else{
+document.getElementById("game-area").innerHTML=`<h3>Quiz Complete!</h3><p>Your score: ${score}/${shuffledQuestions.length}</p><button class="btn" onclick="startGame()">Try Again</button>`;
+}
+}
+</script>
+
+</body>
+</html>
